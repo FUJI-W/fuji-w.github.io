@@ -21,6 +21,7 @@ test.sh
 # ignore _
 ./_*
 **/_*
-*/record
+# */record
+# */work
 
 

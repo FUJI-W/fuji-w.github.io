@@ -53,6 +53,7 @@ extra:
 # Plugins
 plugins:
   - search
+  - mermaid2
 
 # Extensions
 markdown_extensions:
@@ -90,14 +91,19 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:mermaid2.fence_mermaid
 
 
 extra_javascript:
   # - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-# extra_css:
-#   - extra.css
+extra_css:
+  - extra.css
 
 nav:
   - HOME: index.md
@@ -105,8 +111,18 @@ nav:
   - RECORD:
     - 基于稀疏体素八叉树的室内场景神经逆渲染研究:
       - record/inv_fastoct/index.md
+      - 调研记录: record/inv_fastoct/00_read_record.md
+      - 编程记录: record/inv_fastoct/00_code_record.md
       - 体渲染: record/inv_fastoct/01_vol_renderer.md
       - 可微体渲染: record/inv_fastoct/02_diff_vol_renderer.md
+
+  - WORK:
+    - 求职记录:
+      - work/offer_harvester/index.md
+      - 工作信息: work/offer_harvester/02_information.md
+      - 经验分享: work/offer_harvester/03_share.md
+      - 时间线: work/offer_harvester/01_timeline.md
+      - 笔面试记录: work/offer_harvester/04_record.md
 
   # - blog: 
   #   - 0. &nbsp; &nbsp; test1:
