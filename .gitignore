@@ -17,3 +17,10 @@
 
 # test script
 test.sh
+
+# ignore _
+./_*
+**/_*
+*/record
+
+

@@ -13,7 +13,7 @@ theme:
     # - content.code.copy
     # - content.tabs.link
     # - content.tooltips
-    - header.autohide
+    # - header.autohide
     # - navigation.expand
     - navigation.indexes
     # - navigation.instant
@@ -100,11 +100,23 @@ extra_javascript:
 #   - extra.css
 
 nav:
-  - home: index.md
-  - blog: 
-    - 0. &nbsp; &nbsp; test1:
-      - blog/index.md
-      - 0.1. &nbsp; test: blog/test1.md
-    - 1. &nbsp; &nbsp; test2:
-      - blog/index.md
-      - 1.1. &nbsp; test: blog/test1.md
+  - HOME: index.md
+
+  - RECORD:
+    - 基于稀疏体素八叉树的室内场景神经逆渲染研究:
+      - record/inv_fastoct/index.md
+      - 体渲染: record/inv_fastoct/01_vol_renderer.md
+      - 可微体渲染: record/inv_fastoct/02_diff_vol_renderer.md
+
+  - CS:
+    - 汇总篇:
+      - computer_science/summary/index.md
+      - 「研究生考试」重点汇总篇: computer_science/summary/「研究生考试」重点汇总篇.md
+
+  # - blog: 
+  #   - 0. &nbsp; &nbsp; test1:
+  #     - note/index.md
+  #     - 0.1. &nbsp; test: note/test1.md
+  #   - 1. &nbsp; &nbsp; test2:
+  #     - note/index.md
+  #     - 1.1. &nbsp; test: note/test1.md
