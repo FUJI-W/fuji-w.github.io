@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+**/.idea
+**/.vscode
+
+# mkdocs files
+.cache/
+/docs/overrides
+
+# build
+/build
+/site
+/utils
+
+# test script
+test.sh
