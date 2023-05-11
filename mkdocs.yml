@@ -79,10 +79,10 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.keys
-  # - pymdownx.magiclink:
-  #     repo_url_shorthand: true
-  #     user: squidfunk
-  #     repo: mkdocs-material
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.tabbed:
@@ -107,11 +107,6 @@ nav:
       - record/inv_fastoct/index.md
       - 体渲染: record/inv_fastoct/01_vol_renderer.md
       - 可微体渲染: record/inv_fastoct/02_diff_vol_renderer.md
-
-  - CS:
-    - 汇总篇:
-      - computer_science/summary/index.md
-      - 「研究生考试」重点汇总篇: computer_science/summary/「研究生考试」重点汇总篇.md
 
   # - blog: 
   #   - 0. &nbsp; &nbsp; test1:
