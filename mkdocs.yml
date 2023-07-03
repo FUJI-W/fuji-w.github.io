@@ -1,18 +1,20 @@
-site_name: web
+site_name: FUJI's Mind Palace
 site_author: fuji
 
 theme:
   name: 'material'
   language: zh
+  logo: https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130236896.svg
+  favicon: https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130239130.svg
   highlightjs: true
   features:
     # - announce.dismiss
-    # - content.action.edit
+    - content.action.edit
     # - content.action.view
-    # - content.code.annotate
-    # - content.code.copy
-    # - content.tabs.link
-    # - content.tooltips
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
     # - header.autohide
     # - navigation.expand
     - navigation.indexes
@@ -42,9 +44,9 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-  # font:
-  #   text: Noto Sans SC
-  #   code: Fira Code
+  font:
+    text: Noto Sans SC
+    code: Fira Code
 
 extra:
   generator: false
@@ -54,6 +56,20 @@ extra:
 plugins:
   - search
   - mermaid2
+  # touch the image
+  # - glightbox:
+  #      touchNavigation: true
+  #      loop: false
+  #      effect: zoom
+  #      slide_effect: slide
+  #      width: 100%
+  #      height: auto
+  #      zoomable: true
+  #      draggable: true
+  #      skip_classes:
+  #        - custom-skip-class-name
+  #      auto_caption: false
+  #      caption_position: bottom
 
 # Extensions
 markdown_extensions:
@@ -99,7 +115,7 @@ markdown_extensions:
 
 
 extra_javascript:
-  # - javascripts/mathjax.js
+  - mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
@@ -108,21 +124,84 @@ extra_css:
 nav:
   - HOME: index.md
 
+  - CS:
+    - 计算机组成原理:
+      - CS/cs/index.md
+    - 操作系统:
+      - CS/os/index.md
+    - 计算机网络:
+      - CS/cn/index.md
+    - 总结:
+      - CS/summary/index.md
+      - 计算机基础知识总结: CS/summary/01_basic_summary.md
+    - 其他内容:
+      - CS/others/index.md
+      - matlab课程: CS/others/matlab.md
+      - 数学建模课程: CS/others/mathematical_modeling.md
+
+  - ML:
+    - 基本学习范式: 
+      - ML/basic_paradigm/index.md
+    - 白板推导课程:
+      - ML/course_whiteboard/index.md
+      - 隐马尔可夫链: ML/course_whiteboard/00_hmm.md
+
+  - CG: 
+    - 基础:
+      - CG/basic/index.md
+      - 矩阵变换: CG/basic/matrix.md
+    - 渲染:
+      - CG/rendering/index.md
+      - 实时渲染基础: CG/rendering/basic.md
+      - 基于图像的照明: CG/rendering/IBL.md
+
+  - CV:
+    - 三维视觉:
+      - CV/3d_vision/index.md
+      - 双目成像相关原理: CV/3d_vision/stereo.md
+    - 图像处理:
+      - CV/image_processing/index.md
+
+  - ALGO: 
+    - 你好算法: 
+      - algo/index.md
+      - 机试笔记: algo/01_master_exam.md
+
+  - CODE: 
+    - C++:
+      - code/cpp/index.md
+      - 网课笔记01: code/cpp/01_basic.md
+      - 网课笔记02: code/cpp/02_advance.md
+
   - RECORD:
     - 基于稀疏体素八叉树的室内场景神经逆渲染研究:
       - record/inv_fastoct/index.md
-      - 调研记录: record/inv_fastoct/00_read_record.md
+      # - 调研记录: record/inv_fastoct/00_read_record.md
       - 编程记录: record/inv_fastoct/00_code_record.md
-      - 体渲染: record/inv_fastoct/01_vol_renderer.md
+      # - 论文结构: record/inv_fastoct/00_ismar_record.md
+      - 体渲染: record/inv_fastoct/01_RTE.md
+      - NeRF体渲染: record/inv_fastoct/01_vol_renderer.md 
       - 可微体渲染: record/inv_fastoct/02_diff_vol_renderer.md
+      - 可微体渲染的实现: record/inv_fastoct/02_diff_vol_renderer_exper.md
+      - 坐标系定义0: record/inv_fastoct/01_format_trans.md
+      - 坐标系定义1: record/inv_fastoct/01_ft01_i2p.md
+      - 坐标系定义2: record/inv_fastoct/01_ft02_p2v.md
+      # - 坐标系定义3: record/inv_fastoct/01_ft03_v2o.md
+      # - 坐标系定义4: record/inv_fastoct/01_ft04_o2g.md
 
-  - WORK:
-    - 求职记录:
-      - work/offer_harvester/index.md
-      - 工作信息: work/offer_harvester/02_information.md
-      - 经验分享: work/offer_harvester/03_share.md
-      - 时间线: work/offer_harvester/01_timeline.md
-      - 笔面试记录: work/offer_harvester/04_record.md
+  # - WORK:
+    # - 求职记录:
+      # - work/offer_harvester/index.md
+      # - 工作信息: work/offer_harvester/02_information.md
+      # - 经验分享: work/offer_harvester/03_share.md
+      # - 时间线: work/offer_harvester/01_timeline.md
+      # - 笔面试记录: work/offer_harvester/04_record.md
+      # - 考察知识汇总: work/offer_harvester/05_knowledge.md
+  
+  - NOTE:
+    - 论文笔记:
+      - note/paper/index.md
+      - (2022 SIGGRAPH) dual ocnn: note/paper/SIGGRAPH2022_dual_ocnn.md
 
   # - blog: 
   #   - 0. &nbsp; &nbsp; test1:

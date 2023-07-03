@@ -37,6 +37,12 @@ G --> | render | I("environment map ")
 
 ### 八叉树
 
+> 八叉树渲染：[Sparse Voxel Cone Tracing 理论介绍 | Unity 中文课堂 (u3d.cn)](https://learn.u3d.cn/tutorial/sparse-voxel-cone-tracing?chapterId=63562b28edca72001f21d139#60e55c5b2e75ba001fc46378)
+>
+> 八叉树结构：[ocnn.octree — ocnn-pytorch 2.2.0 documentation](https://ocnn-pytorch.readthedocs.io/en/latest/modules/octree.html#ocnn.octree.Octree)
+>
+> [Simon's Tech Blog: Sparse voxel octree (simonstechblog.blogspot.com)](https://simonstechblog.blogspot.com/search/label/Sparse voxel octree)
+
 ![image-20230425160050206](https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202304251600270.png)
 
 
@@ -201,3 +207,26 @@ while stack not empty:
 ## 数据集
 
 [性价比超高：苹果发布了新数据集，助力室内场景理解 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/400644441)
+
+### Hypersim
+
+- 介绍：
+- 链接：
+- 读取示例：[ml-hypersim/contrib/mikeroberts3000 at main · apple/ml-hypersim · GitHub](https://github.com/apple/ml-hypersim/tree/main/contrib/mikeroberts3000)
+
+
+
+## 网络
+
+#### 运算错误
+
+- ![image-20230521204344781](https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305212043076.png)
+
+
+
+#### taichi存储的差异
+
+[Taichi 和 PyTorch 的数据容器，存在哪些差异？ - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/537479482)
+
+
+

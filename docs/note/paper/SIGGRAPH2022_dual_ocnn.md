@@ -40,7 +40,7 @@
 
 ### 动机
 
-三维几何的**体积场**（Volumetric field）表示，如SDF、occupancy field，被广泛地应用于三维建模与重建任务，最近也在基于学习的算法中体现出优势。然而，开发一种有效的神经体积场表示方法以及相应的三维形状生成和重建的学习方案（learning scheme）仍然是一个悬而未决的问题。
+三维几何的 **体积场** （Volumetric field）表示，如SDF、occupancy field，被广泛地应用于三维建模与重建任务，最近也在基于学习的算法中体现出优势。然而，开发一种有效的神经体积场表示方法以及相应的三维形状生成和重建的学习方案（learning scheme）仍然是一个悬而未决的问题。
 
 已有的方案主要有以下几种，
 
@@ -56,7 +56,7 @@
 
   - 体素场的编码网络仍然是基于 Full-Voxel-based CNNs 或 Sparse-Voxel-based CNNs。
 
-**论文的关键思想**是使用自适应八叉树来表示点云和体积场，并在对偶八叉树图上用图网络学习特征。相比Full-Voxel方法效率有所提高，相比Sparse-Voxel方法可以保证全局特征聚合与连续的输出。
+**论文的关键思想** 是使用自适应八叉树来表示点云和体积场，并在对偶八叉树图上用图网络学习特征。相比Full-Voxel方法效率有所提高，相比Sparse-Voxel方法可以保证全局特征聚合与连续的输出。
 
 ### 方法
 
@@ -82,6 +82,7 @@
 $$
 F_i=\mathcal{A} \circ\left\{W\left(\Delta p_{i j}\right) \times F_j, \forall j \in \mathcal{N}_i\right\}
 $$
+
 其中，$\mathcal{A}$ 是可微分的聚合算子（如累加、平均、最值）等；$W(\cdot)$ 是一个权重函数，自变量为同一条边的两个图节点的相对位置 $\Delta p_{i j}$ ，因变量为对应的卷积权重；$\mathcal{N}_i$ 是点 $v_i$ 的所有邻居节点。
 
 现有方法通常将 $W(\cdot)$ 定义为连续函数，如MLPs，这类权重函数会带来较大的计算开销。基于对偶八叉树图的特点，作者做了大胆的简化，将相邻节点的相对位置 $\Delta p_{ij}$ 简化为 $\{+x,-x,+y,-y,+z,-z,self\}$ 共7种，进而将 $W(\cdot)$ 定义为7维矩阵，每一维对应了一种相对位置。通过这一简化，作者进一步地将整个图的卷积转化为矩阵运算，极大地提高了卷积效率。
@@ -89,6 +90,8 @@ $$
 $$
 F_i=\sum_{j \in \mathcal{N}_i} W_{I\left(\Delta p_{i j}\right)} \times\left[F_j\left\|D_j\right\| \Delta p_{i j}\right]
 $$
+
+
 上式为论文提出的聚合算子，式中 $D_j$ 为节点 $v_i$ 的八叉树深度 $d_j$的独热编码，$I(\cdot)=\{0,...,6\}$。
 
 ![image.png](https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201740359.png)
@@ -106,6 +109,7 @@ $$
 $$
 F(x)=\frac{\sum_i c_i \cdot w_i(x) \cdot \Phi\left(x, F_i\right)}{\sum_i c_i \cdot w_i(x)}
 $$
+
 式中 $F(x)$ 是一个全局连续可微的函数，权重函数 $w_i(x)$ 的定义如下，其中 $o_i$ 和 $r_i$ 分别为节点体素的中心坐标与空间大小，$c_i$ 是体素空间体积的倒数。$B(\cdot)$ 保证了查询的局部性。
 
 $$
@@ -127,11 +131,13 @@ PredictionModule 模块所使用的 Loss 类似于二分类的 Loss：
 $$
 \mathcal{L}_{o c t r e e}=\sum_d \frac{1}{N_d} \sum_{o \in O_d} \operatorname{CrossEntropy}\left(o, o_{g t}\right)
 $$
+
 NeuralMPU 模块所使用的 Loss 类似于 L2 Loss：
 
 $$
 \mathcal{L}_{\text {regress }}=\sum_d \frac{1}{N \mathcal{P}} \sum_{x \in \mathcal{P}}\left(\lambda_v\|F(x)-G(x)\|_2^2+\|\nabla F(x)-\nabla G(x)\|_2^2\right) \text {, }
 $$
+
 对于无监督学习来说，可以使用类似于泊松重建的梯度Loss：
 
 $$

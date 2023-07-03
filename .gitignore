@@ -23,5 +23,9 @@ test.sh
 **/_*
 # */record
 # */work
+*/*.pdf
+*/**/*.pdf
 
+*/**/xiaohongshu
+work/
 
