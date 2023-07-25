@@ -230,3 +230,18 @@ while stack not empty:
 
 
 
+### Pytorch lightning
+
+
+
+
+
+### 环境贴图处理相关
+
+#### skylibs 开源包
+
+> https://github.com/soravux/skylibs
+>
+> 需要修改 hdr 的读取
+
+![image-20230712104210371](https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202307121042596.png)
