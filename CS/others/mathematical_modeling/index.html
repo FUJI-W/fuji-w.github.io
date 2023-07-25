@@ -1,0 +1,3947 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="fuji">
+      
+      
+      
+        <link rel="prev" href="../matlab/">
+      
+      
+        <link rel="next" href="../../../ML/basic_paradigm/">
+      
+      <link rel="icon" href="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130239130.svg">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>课程提纲-数学建模【BUAA】 - FUJI's Mind Palace</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fuji_w" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="FUJI&#39;s Mind Palace" class="md-header__button md-logo" aria-label="FUJI's Mind Palace" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130236896.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FUJI's Mind Palace
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              课程提纲-数学建模【BUAA】
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      HOME
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cs/" class="md-tabs__link md-tabs__link--active">
+        CS
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ML/basic_paradigm/" class="md-tabs__link">
+        ML
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CG/basic/" class="md-tabs__link">
+        CG
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../CV/3d_vision/" class="md-tabs__link">
+        CV
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../algo/" class="md-tabs__link">
+        ALGO
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../code/cpp/" class="md-tabs__link">
+        CODE
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../record/inv_fastoct/" class="md-tabs__link">
+        RECORD
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../note/paper/" class="md-tabs__link">
+        NOTE
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FUJI&#39;s Mind Palace" class="md-nav__button md-logo" aria-label="FUJI's Mind Palace" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130236896.svg" alt="logo">
+
+    </a>
+    FUJI's Mind Palace
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        HOME
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          CS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          CS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../cs/">计算机组成原理</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          计算机组成原理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../os/">操作系统</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../cn/">计算机网络</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../summary/">总结</a>
+          
+            <label for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../summary/01_basic_summary/" class="md-nav__link">
+        计算机基础知识总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">其他内容</a>
+          
+            <label for="__nav_2_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          其他内容
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matlab/" class="md-nav__link">
+        matlab课程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数学建模课程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        数学建模课程
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fuji_w" class="md-nav__link">
+    整理者：FUJI_W
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202012" class="md-nav__link">
+    时间：    2020年1月2日
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    考题回顾
+  </a>
+  
+    <nav class="md-nav" aria-label="考题回顾">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    建模部分
+  </a>
+  
+    <nav class="md-nav" aria-label="建模部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    填空题 - 英文翻译
+  </a>
+  
+    <nav class="md-nav" aria-label="填空题 - 英文翻译">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    纳什均衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    博弈论
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    队列模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    名词解释
+  </a>
+  
+    <nav class="md-nav" aria-label="名词解释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    纳什均衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    非纳什均衡
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    简答题
+  </a>
+  
+    <nav class="md-nav" aria-label="简答题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sis-sir-15" class="md-nav__link">
+    传染病模型 SIS SIR （15分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    存储模型（允许缺货，不允许缺货）（15分）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    仿真部分
+  </a>
+  
+    <nav class="md-nav" aria-label="仿真部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    判断题（10分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_1" class="md-nav__link">
+    填空题（10分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_2" class="md-nav__link">
+    简答题（10分）
+  </a>
+  
+    <nav class="md-nav" aria-label="简答题（10分）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adams3" class="md-nav__link">
+    ADAMS（3分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    并行计算树（4分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matlab4" class="md-nav__link">
+    MATLAB程序书写（水仙花数的计算）（4分）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    一、建模
+  </a>
+  
+    <nav class="md-nav" aria-label="一、建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    建模基础
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    模型汇总
+  </a>
+  
+    <nav class="md-nav" aria-label="模型汇总">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 初等模型
+  </a>
+  
+    <nav class="md-nav" aria-label="1 初等模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    椅子能否在不平的地面上放平
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    赛艇成绩
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 数学规划模型
+  </a>
+  
+    <nav class="md-nav" aria-label="2 数学规划模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    奶制品的生产与销售
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 简单优化模型
+  </a>
+  
+    <nav class="md-nav" aria-label="3 简单优化模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    存储模型（允许缺货）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    存储模型（不允许缺货）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4 微分建模
+  </a>
+  
+    <nav class="md-nav" aria-label="4 微分建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    崖高的估计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    双层玻璃的功效
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    传染病模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malthus" class="md-nav__link">
+    Malthus 人口模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logistic" class="md-nav__link">
+    Logistic 人口模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanchester" class="md-nav__link">
+    Lanchester 战争模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    多级火箭发射模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pq0" class="md-nav__link">
+    军备竞赛模型（稳定性判断方法 p,q&gt;0）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 差分方程
+  </a>
+  
+    <nav class="md-nav" aria-label="5 差分方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    市场经济的蛛网模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6 离散事件仿真
+  </a>
+  
+    <nav class="md-nav" aria-label="6 离散事件仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    离散事件基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    仿真时间推进
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    队列模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mm1" class="md-nav__link">
+    M/M/1 中三个参数的意义；
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7 马氏链模型
+  </a>
+  
+    <nav class="md-nav" aria-label="7 马氏链模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    概念：描述一类重要的随机动态系统(过程)的模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    健康与疾病
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    钢琴销售的存储策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8 离散模型
+  </a>
+  
+    <nav class="md-nav" aria-label="8 离散模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    层次分析法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    循环比赛的名次
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9 博弈模型
+  </a>
+  
+    <nav class="md-nav" aria-label="9 博弈模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shapley" class="md-nav__link">
+    多方合作的 Shapley 分配 —— 例 效益的合理分配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nash-equilibrium" class="md-nav__link">
+    纳什均衡（Nash equilibrium）—— 例 进攻与撤退的抉择
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    实例分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_3" class="md-nav__link">
+    10 社会力模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    英文汇总
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    二、仿真
+  </a>
+  
+    <nav class="md-nav" aria-label="二、仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    第八章 物理仿真
+  </a>
+  
+    <nav class="md-nav" aria-label="第八章 物理仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1 概述
+  </a>
+  
+    <nav class="md-nav" aria-label="1 概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    数学仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    数字计算机仿真（串行仿真？）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    物理仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    半实物仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    半实物仿真实验（地面物理实验）——飞行控制系统工程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2 仿真设备及实验原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3 仿真器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    第九章 并行仿真（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="第九章 并行仿真（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1 一般概念
+  </a>
+  
+    <nav class="md-nav" aria-label="1 一般概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    串行仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    并行处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2 并行计算机的分类及结构
+  </a>
+  
+    <nav class="md-nav" aria-label="2 并行计算机的分类及结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simdmimdmisd" class="md-nav__link">
+    按信息流分类（SIMD，MIMD，MISD）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    按并行工作单元的层次等级分类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3 并行算法
+  </a>
+  
+    <nav class="md-nav" aria-label="3 并行算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    计算问题分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    计算机算法的划分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adams" class="md-nav__link">
+    ADAMS 时序图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    并行算法的计算树
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    附录
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          ML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          ML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ML/basic_paradigm/">基本学习范式</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          基本学习范式
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../ML/course_whiteboard/">白板推导课程</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          白板推导课程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ML/course_whiteboard/00_hmm/" class="md-nav__link">
+        隐马尔可夫链
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          CG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          CG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../CG/basic/">基础</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CG/basic/matrix/" class="md-nav__link">
+        矩阵变换
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../CG/rendering/">渲染</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          渲染
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CG/rendering/basic/" class="md-nav__link">
+        实时渲染基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CG/rendering/IBL/" class="md-nav__link">
+        基于图像的照明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          CV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          CV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../CV/3d_vision/">三维视觉</a>
+          
+            <label for="__nav_5_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          三维视觉
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CV/3d_vision/stereo/" class="md-nav__link">
+        双目成像相关原理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../CV/image_processing/">图像处理</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          图像处理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          ALGO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          ALGO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../algo/">你好算法</a>
+          
+            <label for="__nav_6_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          你好算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/01_master_exam/" class="md-nav__link">
+        机试笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          CODE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          CODE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../code/cpp/">C++</a>
+          
+            <label for="__nav_7_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/cpp/01_basic/" class="md-nav__link">
+        网课笔记01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/cpp/02_advance/" class="md-nav__link">
+        网课笔记02
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          RECORD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          RECORD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../record/inv_fastoct/">基于稀疏体素八叉树的室内场景神经逆渲染研究</a>
+          
+            <label for="__nav_8_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          基于稀疏体素八叉树的室内场景神经逆渲染研究
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/00_code_record/" class="md-nav__link">
+        编程记录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/01_RTE.md" class="md-nav__link">
+        体渲染
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/01_vol_renderer.md" class="md-nav__link">
+        NeRF体渲染
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/02_diff_vol_renderer.md" class="md-nav__link">
+        可微体渲染
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/02_diff_vol_renderer_exper.md" class="md-nav__link">
+        可微体渲染的实现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/01_format_trans/" class="md-nav__link">
+        坐标系定义0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/01_ft01_i2p/" class="md-nav__link">
+        坐标系定义1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../record/inv_fastoct/01_ft02_p2v/" class="md-nav__link">
+        坐标系定义2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          NOTE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          NOTE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../note/paper/">论文笔记</a>
+          
+            <label for="__nav_9_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_1">
+          <span class="md-nav__icon md-icon"></span>
+          论文笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note/paper/SIGGRAPH2022_dual_ocnn/" class="md-nav__link">
+        (2022 SIGGRAPH) dual ocnn
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fuji_w" class="md-nav__link">
+    整理者：FUJI_W
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202012" class="md-nav__link">
+    时间：    2020年1月2日
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    考题回顾
+  </a>
+  
+    <nav class="md-nav" aria-label="考题回顾">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    建模部分
+  </a>
+  
+    <nav class="md-nav" aria-label="建模部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    填空题 - 英文翻译
+  </a>
+  
+    <nav class="md-nav" aria-label="填空题 - 英文翻译">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    纳什均衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    博弈论
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    队列模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    名词解释
+  </a>
+  
+    <nav class="md-nav" aria-label="名词解释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    纳什均衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    非纳什均衡
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    简答题
+  </a>
+  
+    <nav class="md-nav" aria-label="简答题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sis-sir-15" class="md-nav__link">
+    传染病模型 SIS SIR （15分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    存储模型（允许缺货，不允许缺货）（15分）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    仿真部分
+  </a>
+  
+    <nav class="md-nav" aria-label="仿真部分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    判断题（10分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_1" class="md-nav__link">
+    填空题（10分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_2" class="md-nav__link">
+    简答题（10分）
+  </a>
+  
+    <nav class="md-nav" aria-label="简答题（10分）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adams3" class="md-nav__link">
+    ADAMS（3分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    并行计算树（4分）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matlab4" class="md-nav__link">
+    MATLAB程序书写（水仙花数的计算）（4分）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    一、建模
+  </a>
+  
+    <nav class="md-nav" aria-label="一、建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    建模基础
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    模型汇总
+  </a>
+  
+    <nav class="md-nav" aria-label="模型汇总">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 初等模型
+  </a>
+  
+    <nav class="md-nav" aria-label="1 初等模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    椅子能否在不平的地面上放平
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    赛艇成绩
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 数学规划模型
+  </a>
+  
+    <nav class="md-nav" aria-label="2 数学规划模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    奶制品的生产与销售
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 简单优化模型
+  </a>
+  
+    <nav class="md-nav" aria-label="3 简单优化模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    存储模型（允许缺货）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    存储模型（不允许缺货）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4 微分建模
+  </a>
+  
+    <nav class="md-nav" aria-label="4 微分建模">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    崖高的估计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    双层玻璃的功效
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    传染病模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malthus" class="md-nav__link">
+    Malthus 人口模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logistic" class="md-nav__link">
+    Logistic 人口模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanchester" class="md-nav__link">
+    Lanchester 战争模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    多级火箭发射模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pq0" class="md-nav__link">
+    军备竞赛模型（稳定性判断方法 p,q&gt;0）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 差分方程
+  </a>
+  
+    <nav class="md-nav" aria-label="5 差分方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    市场经济的蛛网模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6 离散事件仿真
+  </a>
+  
+    <nav class="md-nav" aria-label="6 离散事件仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    离散事件基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    仿真时间推进
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    队列模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mm1" class="md-nav__link">
+    M/M/1 中三个参数的意义；
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7 马氏链模型
+  </a>
+  
+    <nav class="md-nav" aria-label="7 马氏链模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    概念：描述一类重要的随机动态系统(过程)的模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    健康与疾病
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    钢琴销售的存储策略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8 离散模型
+  </a>
+  
+    <nav class="md-nav" aria-label="8 离散模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    层次分析法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    循环比赛的名次
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9 博弈模型
+  </a>
+  
+    <nav class="md-nav" aria-label="9 博弈模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shapley" class="md-nav__link">
+    多方合作的 Shapley 分配 —— 例 效益的合理分配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nash-equilibrium" class="md-nav__link">
+    纳什均衡（Nash equilibrium）—— 例 进攻与撤退的抉择
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    基本概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    实例分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_3" class="md-nav__link">
+    10 社会力模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    英文汇总
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    二、仿真
+  </a>
+  
+    <nav class="md-nav" aria-label="二、仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    第八章 物理仿真
+  </a>
+  
+    <nav class="md-nav" aria-label="第八章 物理仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1 概述
+  </a>
+  
+    <nav class="md-nav" aria-label="1 概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    数学仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    数字计算机仿真（串行仿真？）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    物理仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    半实物仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    半实物仿真实验（地面物理实验）——飞行控制系统工程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2 仿真设备及实验原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3 仿真器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    第九章 并行仿真（重点）
+  </a>
+  
+    <nav class="md-nav" aria-label="第九章 并行仿真（重点）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1 一般概念
+  </a>
+  
+    <nav class="md-nav" aria-label="1 一般概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    串行仿真
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    并行处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2 并行计算机的分类及结构
+  </a>
+  
+    <nav class="md-nav" aria-label="2 并行计算机的分类及结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simdmimdmisd" class="md-nav__link">
+    按信息流分类（SIMD，MIMD，MISD）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    按并行工作单元的层次等级分类
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3 并行算法
+  </a>
+  
+    <nav class="md-nav" aria-label="3 并行算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    计算问题分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    计算机算法的划分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adams" class="md-nav__link">
+    ADAMS 时序图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    并行算法的计算树
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    附录
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<blockquote>
+<h3 id="fuji_w">整理者：FUJI_W<a class="headerlink" href="#fuji_w" title="Permanent link">&para;</a></h3>
+<h3 id="202012">时间：    2020年1月2日<a class="headerlink" href="#202012" title="Permanent link">&para;</a></h3>
+</blockquote>
+<h1 id="_1">考题回顾<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">建模部分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h4 id="-">填空题 - 英文翻译<a class="headerlink" href="#-" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_3">纳什均衡<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="_4">博弈论<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="_5">队列模型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<h4 id="_6">名词解释<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>**是什么？请举例说明。</p>
+</blockquote>
+<ol>
+<li>
+<h5 id="_7">纳什均衡<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="_8">非纳什均衡<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<h4 id="_9">简答题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="sis-sir-15">传染病模型 SIS SIR （15分）<a class="headerlink" href="#sis-sir-15" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="15">存储模型（允许缺货，不允许缺货）（15分）<a class="headerlink" href="#15" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<h2 id="_10">仿真部分<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h4 id="10">判断题（10分）<a class="headerlink" href="#10" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>大多是仿真那一节</p>
+</blockquote>
+<h4 id="10_1">填空题（10分）<a class="headerlink" href="#10_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>MATLAB的数组赋值，多项式求解；</p>
+<p>分布式交互仿真的特点等</p>
+</blockquote>
+<h4 id="10_2">简答题（10分）<a class="headerlink" href="#10_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="adams3">ADAMS（3分）<a class="headerlink" href="#adams3" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="4">并行计算树（4分）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="matlab4">MATLAB程序书写（水仙花数的计算）（4分）<a class="headerlink" href="#matlab4" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<hr />
+<h1 id="_11">一、建模<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h2 id="_12">建模基础<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<ol>
+<li>实物模型：玩具、照片、飞机、火箭模型；</li>
+</ol>
+<p>物理模型：水箱中的舰艇、风洞中的飞机；</p>
+<p>符号模型：地图、电路图、分子结构图；</p>
+<ol>
+<li>
+<p><strong>数学模型（Mathematical）</strong>：对于一个**现实对象** ，为了一个**特定目的**，根据其**内在**
+   <strong>规律</strong>，作出必要的**简化假设**，运用适当的**数学工具**得到的一个**数学结构** 。</p>
+</li>
+<li>
+<p><strong>数学建模（Mathematical Modeling）</strong>：建立数学模型的**全过程**。<em>（ 包括表述、求解、解释、检验等 ）</em></p>
+</li>
+<li>
+<p>数学建模的基本方法：</p>
+</li>
+<li>
+<p>机理分析：主要通过实例研究（Case Studies）来学习。</p>
+</li>
+<li>测试分析：黑箱测试，通过对量测数据的统计分析，找出与数据拟合最好的模型。</li>
+<li>
+<p>二者结合：用机理分析建立模型结构，用测试分析确定模型参数。</p>
+</li>
+<li>
+<p>数学建模一般步骤：</p>
+</li>
+</ol>
+<p>1.模型求解；2.模型分析；3.模型检验；4.模型应用。</p>
+<ol>
+<li>数学模型的分类</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>分类标准</th>
+<th>具体类别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对某个实际问题了解的深入程度</td>
+<td>白箱模型、灰箱模型、黑箱模型</td>
+</tr>
+<tr>
+<td>模型中变量的特征</td>
+<td>连续型模型、离散型模型或确定性模型、随机型模型等</td>
+</tr>
+<tr>
+<td>建模中所用的数学方法</td>
+<td>初等模型、微分方程模型、差分方程模型、优化模型等</td>
+</tr>
+<tr>
+<td>研究课题的实际范畴</td>
+<td>人口模型、生态系统模型 、交通流模型、经济模型、 基因模型等</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_13">模型汇总<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h4 id="1">1 初等模型<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_14">椅子能否在不平的地面上放平<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102004752080" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162642191-132194062.png" /></p>
+<ol>
+<li>
+<h5 id="_15">赛艇成绩<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102010202962" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162627052-1044101949.png" /></p>
+<h4 id="2">2 数学规划模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_16">奶制品的生产与销售<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<h4 id="3">3 简单优化模型<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_17">存储模型（允许缺货）<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102010635372" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162620903-917913829.png" /></p>
+<ol>
+<li>
+<h5 id="_18">存储模型（不允许缺货）<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102011406656" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162613601-810939353.png" /></p>
+<h4 id="4_1">4 微分建模<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_19">崖高的估计<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162609822-9886036.png"  height="330" width="495"></p>
+<ol>
+<li>
+<h5 id="_20">双层玻璃的功效<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162635655-627462448.png"  height="330" width="495"></p>
+<ol>
+<li>
+<h5 id="_21"><mark>传染病模型</mark><a class="headerlink" href="#_21" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102014453384" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162605662-583367932.png" /></p>
+<ol>
+<li>
+<h5 id="malthus">Malthus 人口模型<a class="headerlink" href="#malthus" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162601145-1017166386.png"  height="330" width="495"></p>
+<ol>
+<li>
+<h5 id="logistic">Logistic 人口模型<a class="headerlink" href="#logistic" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162547786-1190216429.png"  height="330" width="495"></p>
+<ol>
+<li>
+<h5 id="lanchester">Lanchester 战争模型<a class="headerlink" href="#lanchester" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102020021984" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162539829-83177243.png" /></p>
+<ol>
+<li>
+<h5 id="_22">多级火箭发射模型<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102023154967" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162533742-1077267012.png" /></p>
+<ol>
+<li>
+<h5 id="pq0">军备竞赛模型（稳定性判断方法 p,q&gt;0）<a class="headerlink" href="#pq0" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<h4 id="5">5 差分方程<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_23"><mark>市场经济的蛛网模型</mark><a class="headerlink" href="#_23" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102025737962" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162522039-935277991.png" /></p>
+<h4 id="6">6 离散事件仿真<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_24">离散事件基本概念<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200101164707217" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162729936-1785705009.png" /></p>
+<ol>
+<li>
+<h5 id="_25">仿真时间推进<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>固定时间步长推进方法：所有实体的时钟以同样的步长更新；</p>
+</li>
+<li>
+<p>下一事件推进方法：时间推进时从当前事件发生时间到下一事件发生时间，也就是说，仿真会跳过没有事件发生的时间段；</p>
+</li>
+<li>
+<p>未来事件列表（<strong>FEL</strong>）：包含所有将要调用的事件，并且以时序排列；</p>
+</li>
+<li>
+<p>执行过程（<strong>Executive Routine</strong>）：取出下一事件，推进仿真时间并且将控制权交给正确的执行过程。</p>
+</li>
+<li>
+<h5 id="_26">队列模型<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="mm1">M/M/1 中三个参数的意义；<a class="headerlink" href="#mm1" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162411597-588548000.png"  height="330" width="495"></p>
+</li>
+</ol>
+<h4 id="7">7 马氏链模型<a class="headerlink" href="#7" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_27">概念：描述一类重要的随机动态系统(过程)的模型<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>系统在每个时期所处的状态是随机的；</p>
+</li>
+<li>从一时期到下时期的状态按一定概率转移；</li>
+<li>
+<p>下时期状态只取决于本时期状态和转移概率. 已知现在，将来与过去无关（<strong>无后效性</strong>）。</p>
+</li>
+<li>
+<h5 id="_28">健康与疾病<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102041940544" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162421314-2044639879.png" /></p>
+<ol>
+<li>
+<h5 id="_29">钢琴销售的存储策略<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<h4 id="8">8 离散模型<a class="headerlink" href="#8" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_30">层次分析法<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p><strong>层次划分：目标层 O，准则层 C，方案层 P；</strong></p>
+</li>
+<li>特点：定性与定量结合；</li>
+<li><img alt="image-20200101193534292" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162710258-768677294.png" /></li>
+<li>
+<p><img alt="image-20200102035844128" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162442715-831675127.png" /></p>
+</li>
+<li>
+<h5 id="_31">循环比赛的名次<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102035054421" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162446238-1842551304.png" /></p>
+<h4 id="9">9 博弈模型<a class="headerlink" href="#9" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="shapley">多方合作的 Shapley 分配 —— 例 效益的合理分配<a class="headerlink" href="#shapley" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200102032022219" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102165717658-1025675900.png" />)</p>
+<ol>
+<li>
+<h5 id="nash-equilibrium">纳什均衡（Nash equilibrium）—— 例 进攻与撤退的抉择<a class="headerlink" href="#nash-equilibrium" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="_32">基本概念<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h5>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162512379-1416927214.png"  height="330" width="495"></p>
+</li>
+<li>
+<h5 id="_33">实例分析<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h5>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162504690-1351736344.png"  height="330" width="495"></p>
+</li>
+</ol>
+<h4 id="10_3">10 社会力模型<a class="headerlink" href="#10_3" title="Permanent link">&para;</a></h4>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162449825-546569455.png"  height="280" width="600"></p>
+<h2 id="_34">英文汇总<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>原文</th>
+<th>翻译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人口模型</td>
+<td>Malthus / Logistic</td>
+</tr>
+<tr>
+<td>战争模型</td>
+<td>Lanchester</td>
+</tr>
+<tr>
+<td>经济订货批量公式</td>
+<td>EOQ: Economic Order Quantity</td>
+</tr>
+<tr>
+<td>离散事件仿真</td>
+<td>Discrete Event Simulation，缩写为 DES <br />包含 实体（entity）及其相关属性（attribute），活动（activity），事件（event），进程（process），</td>
+</tr>
+<tr>
+<td>同步模型</td>
+<td>synchronous model of time</td>
+</tr>
+<tr>
+<td>异步模型</td>
+<td>asynchronous model of time</td>
+</tr>
+<tr>
+<td>下一事件时间推进算法</td>
+<td>next-event time advance algorithm</td>
+</tr>
+<tr>
+<td>层次分析法</td>
+<td>Analytic Hierarchy Process</td>
+</tr>
+<tr>
+<td>纳什均衡</td>
+<td>Nash Equilibrium</td>
+</tr>
+<tr>
+<td>支付矩阵</td>
+<td>Payoff Matrix</td>
+</tr>
+<tr>
+<td>马氏链</td>
+<td>Markov Chain</td>
+</tr>
+</tbody>
+</table>
+<h1 id="_35">二、仿真<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h1>
+<p><img alt="image-20200101211028416" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162659395-10052374.png" /></p>
+<h2 id="_36">第八章 物理仿真<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<h4 id="1_1">1 概述<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_37">数学仿真<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p>对实际系统进行抽象，并将其特性用**数学关系**加以描述而得到系统的数学模型，对数学模型进行实验的过程称为数学仿真。</p>
+<ol>
+<li>
+<h5 id="_38">数字计算机仿真（串行仿真？）<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p>将系统**数学模型**用**计算机程序**加以实现。</p>
+<ol>
+<li>
+<h5 id="_39">物理仿真<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p>按照真实系统的**物理性质**构造系统的物理模型，并**在物理模型上进行实验**的过程称为物理仿真。</p>
+<ol>
+<li>
+<h5 id="_40">半实物仿真<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p>将**数学模型**与**物理模型**甚至**实物**联合起来进行实验。</p>
+<p><mark><strong>当被仿真的系统中存在物理模型或实物时，必须进行实时仿真。物理仿真和半实物仿真均为实时仿真。</strong></mark></p>
+<ol>
+<li>
+<h5 id="_41">半实物仿真实验（地面物理实验）——飞行控制系统工程<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p><strong>仿</strong>：飞行器在空间运动的**环境和状态**；</p>
+</li>
+<li><strong>真</strong>：实际的**飞行控制器或主要元部件**，如自动驾驶仪、增稳系统、导引头、平台、捷联惯导系统、陀螺等。</li>
+<li>组成：仿真计算机，仿真设备，参试设备，实验控制台，支持服务系统。</li>
+</ol>
+<h4 id="2_1">2 仿真设备及实验原理<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>**仿真设备**也常被称为**模拟器**，是**半实物仿真**中使用数量和种类**最多**、也**最重要**一类设备，在系统中用于**模拟参试设备所处的真实环境中的某一种物理现象**，其模拟或输出的信号是传感器可感知的各种物理现象和效应。
+</code></pre></div>
+<h4 id="3_1">3 仿真器<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>仿真器是一种有**人**在回路中的物理仿真系统。</li>
+<li>仿真器是一种以**计算机**为核心的**声、光、机电系统**。</li>
+</ol>
+<h2 id="_42">第九章 并行仿真（重点）<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h2>
+<h4 id="1_2">1 一般概念<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_43">串行仿真<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>运算符称为**指令流**；运算数称为**数据流**；指令流与数据流合称**信息流**</p>
+</li>
+<li>
+<p><strong>一个操作符只对应一组操作数，产生一个计算结果，这种方式称为==单指令流单数据流方式（SISD）==。</strong></p>
+<p><strong><mark>以SISD方式工作的计算机是串行计算机，进行的仿真是串行仿真。</mark></strong></p>
+</li>
+<li>
+<h5 id="_44">并行处理<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>同时性：多个事件在**同一时刻**发生；—— <strong>并行计算</strong></p>
+</li>
+<li>并发性：多个事件在**同一时间间隔**内发生；—— <strong>串并行混合计算</strong></li>
+</ol>
+<h4 id="2_2">2 并行计算机的分类及结构<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="simdmimdmisd">按信息流分类（SIMD，MIMD，MISD）<a class="headerlink" href="#simdmimdmisd" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p><img alt="image-20200101223707398" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162646653-1318393896.png" /></p>
+<ol>
+<li>
+<h5 id="_45">按并行工作单元的层次等级分类<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p><strong>关联并行处理机</strong></p>
+<p>实现<u>存储器</u>操作的并行。</p>
+</li>
+<li>
+<p><strong>流水线处理机（向量机）</strong></p>
+<p>实现<u>处理器</u>的并行操作。</p>
+</li>
+<li>
+<p><strong>并行处理机</strong></p>
+<p>实现<u>处理机</u>的并行操作。</p>
+</li>
+<li>
+<p><strong>多计算机系统</strong></p>
+<p>实现<u>指令和任务</u>的并行。（MIMD）</p>
+</li>
+<li>
+<p><strong>分布式共享存储多处理机系统（DSM）</strong></p>
+<p>每个并行单元有独立的<u>操作系统</u>。</p>
+</li>
+</ol>
+<h4 id="3_2">3 并行算法<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<h5 id="_46">计算问题分类<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>串行计算问题
+     若一个问题的计算是按照SISD方式进行，即：每步计算都是一个操作符作用于一组操作数，产生一个结果，当前步计算依赖于前一步的结果，则称为串行计算问题。</p>
+</li>
+<li>并行计算问题
+     若一个问题的计算是按照SIMD方式或MIMD方式进行，各分量之间无依赖，则称为并行计算问题。</li>
+<li>
+<p>串并行混合计算问题
+     若一个问题既有串行计算部分又有并行计算部分，则称为串并行混合计算问题。</p>
+</li>
+<li>
+<h5 id="_47">计算机算法的划分<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h5>
+</li>
+</ol>
+<p>按指令流与数据流的执行方式</p>
+<ol>
+<li>串行算法：SISD，串行计算机</li>
+<li>同步并行算法：SIMD，并行计算机</li>
+<li>
+<p>异步并行算法：MIMD，并行计算机</p>
+</li>
+<li>
+<h5 id="adams"><mark>ADAMS 时序图</mark><a class="headerlink" href="#adams" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<h5 id="_48"><mark>并行算法的计算树</mark><a class="headerlink" href="#_48" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>名词</p>
+<ul>
+<li>树叶：输入的n个数。</li>
+<li>节点：双目操作数的操作符。</li>
+<li>树枝：节点-节点间或树叶-节点间的连线。</li>
+<li>树根：计算结果。</li>
+<li>枝高度：树叶到树根间的枝数。</li>
+<li>树高：最大枝高度，即计算次数。</li>
+</ul>
+</li>
+<li>
+<p><img src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102162435891-1956489268.png"  height="330" width="495"></p>
+</li>
+</ol>
+<blockquote>
+<h1 id="_49">附录<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h1>
+</blockquote>
+<p><img alt="image-20200102170935150" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102171002470-388291971.png" /></p>
+<p><img alt="image-1713772465" src="https://img2018.cnblogs.com/blog/1615869/202001/1615869-20200102171202318-1713772465.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
+</html>
