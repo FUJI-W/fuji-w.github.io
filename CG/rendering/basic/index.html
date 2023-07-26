@@ -10,7 +10,7 @@
 <link href="../IBL/" rel="next"/>
 <link href="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130239130.svg" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.19" name="generator"/>
-<title>「计算机图形学」图形基础知识 - FUJI's Mind Palace</title>
+<title>实时渲染基础 - FUJI's Mind Palace</title>
 <link href="../../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -49,7 +49,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              「计算机图形学」图形基础知识
+              实时渲染基础
             
           </span>
 </div>
@@ -1329,7 +1329,7 @@ z_{depth}=Q\cdot\frac{(w_{depth}-Z_n)}{w_{depth}}=\frac{Z_f}{Z_f-Z_n}\cdot\frac{
 <li>由上图所示的投影所造成的三角形相似性可以轻易得出如下几个式子：</li>
 </ol>
 <div class="arithmatex">\[
-   \frac{X_1}{Z_1}=\frac{u_1}{d}\quad\Longrightarrow\quad X_1=\frac{u_1}{d}Z
+\frac{X_1}{Z_1}=\frac{u_1}{d}\quad\Longrightarrow\quad X_1=\frac{u_1}{d}Z
    _1 \\
    \frac{X_2}{Z_2}=\frac{u_2}{d}\quad\Longrightarrow\quad X_2=\frac{u_2}{d}Z
    _2 \\
@@ -1339,7 +1339,7 @@ z_{depth}=Q\cdot\frac{(w_{depth}-Z_n)}{w_{depth}}=\frac{Z_f}{Z_f-Z_n}\cdot\frac{
 <li>分别利用 screen space 以及 view space的线性插值可以得到以下几个式子：</li>
 </ol>
 <div class="arithmatex">\[
-   u_s=u_1+s\cdot(u_2-u_1)\\
+u_s=u_1+s\cdot(u_2-u_1)\\
    X_t=X_1+t\cdot(X_2-X_1)\\
    Z_t=Z_1+t\cdot(Z_2-Z_1)
    \]</div>
@@ -1347,7 +1347,7 @@ z_{depth}=Q\cdot\frac{(w_{depth}-Z_n)}{w_{depth}}=\frac{Z_f}{Z_f-Z_n}\cdot\frac{
 <li>联立上式，可以推出 <span class="arithmatex">\(t\)</span> 与 <span class="arithmatex">\(s\)</span> 的关系式：</li>
 </ol>
 <div class="arithmatex">\[
-   Z_t=\frac{d}{u_s}X_t=\frac{d}{u_1+s\cdot(u_2-u_1)}(X_1+t\cdot(X_2-X_1))\\
+Z_t=\frac{d}{u_s}X_t=\frac{d}{u_1+s\cdot(u_2-u_1)}(X_1+t\cdot(X_2-X_1))\\
    =\frac{d}{u_1+s\cdot(u_2-u_1)}(\frac{u_1}{d}Z
    _1+t\cdot(\frac{u_2}{d}Z
    _2-\frac{u_1}{d}Z
@@ -1359,20 +1359,20 @@ z_{depth}=Q\cdot\frac{(w_{depth}-Z_n)}{w_{depth}}=\frac{Z_f}{Z_f-Z_n}\cdot\frac{
 <li>将 <span class="arithmatex">\(t\)</span> 与 <span class="arithmatex">\(s\)</span> 的关系式代入到 <span class="arithmatex">\(Z_t\)</span> 的线性插值式子中，可以得到下式。可以看出，深度值的倒数是线性变换的。</li>
 </ol>
 <div class="arithmatex">\[
-   Z_t=Z_1+t\cdot(Z_2-Z_1)=Z_1+\frac{sZ_1}{sZ_1+(1-s)Z_2}(Z_2-Z_1) \\
+Z_t=Z_1+t\cdot(Z_2-Z_1)=Z_1+\frac{sZ_1}{sZ_1+(1-s)Z_2}(Z_2-Z_1) \\
    \Longrightarrow \frac{1}{Z_t}=\frac{1-s}{Z_1}+\frac{s}{Z_2}=\frac{1}{Z_1}+s(\frac{1}{Z_2}-\frac{1}{Z_1})
    \]</div>
 <ol>
 <li>至此，我们得到了利用屏幕空间下的系数进行正确地线性插值的公式。对于重心坐标插值来说，我们可以类似地推出：</li>
 </ol>
 <div class="arithmatex">\[
-   \frac{1}{Z_t}=\frac{\alpha}{Z_A}+\frac{\beta}{Z_B}+\frac{\gamma}{Z_C} \quad\Longleftrightarrow\quad Z_t=\frac{1}{\frac{\alpha}{Z_A}+\frac{\beta}{Z_B}+\frac{\gamma}{Z_C}}
+\frac{1}{Z_t}=\frac{\alpha}{Z_A}+\frac{\beta}{Z_B}+\frac{\gamma}{Z_C} \quad\Longleftrightarrow\quad Z_t=\frac{1}{\frac{\alpha}{Z_A}+\frac{\beta}{Z_B}+\frac{\gamma}{Z_C}}
    \]</div>
 <ol>
 <li>进一步地，对于深度值之外的任意属性 <span class="arithmatex">\(I\)</span>（法线向量、纹理坐标等）的插值，我们同样先以线性插值为例，进行推导：</li>
 </ol>
 <div class="arithmatex">\[
-   I_t=I_1+t\cdot(I_2-I_1)=I_1+\frac{sZ_1}{sZ_1+(1-s)Z_2}(I_2-I_1)\\
+I_t=I_1+t\cdot(I_2-I_1)=I_1+\frac{sZ_1}{sZ_1+(1-s)Z_2}(I_2-I_1)\\
    \Longrightarrow\quad \frac{I_t}{Z_t}=(1-s)\frac{I_1}{Z_1}+s\frac{I_2}{Z_2}
    \]</div>
 <p>上式的化简：先通分，然后分式上下同时除以 <span class="arithmatex">\(Z_1Z_2\)</span> 即可。</p>
@@ -1380,7 +1380,7 @@ z_{depth}=Q\cdot\frac{(w_{depth}-Z_n)}{w_{depth}}=\frac{Z_f}{Z_f-Z_n}\cdot\frac{
 <li>由上式我们可以得出， <strong>在投影变换前后，任意的属性 <span class="arithmatex">\(I\)</span> 与深度值的比值 <span class="arithmatex">\(\frac{I}{Z}\)</span> 是线性变化的</strong> ，类似地，我们可以得到任意属性的重心坐标插值公式：</li>
 </ol>
 <div class="arithmatex">\[
-   \frac{I_t}{Z_t}=\alpha\frac{I_A}{Z_A}+\beta\frac{I_B}{Z_B}+\gamma\frac{I_C}{Z_C} \quad\Longrightarrow\quad I_t=\frac{1}{\frac{\alpha}{Z_A}+\frac{\beta}{Z_B}+\frac{\gamma}{Z_C}}\cdot(\alpha\frac{I_A}{Z_A}+\beta\frac{I_B}{Z_B}+\gamma\frac{I_C}{Z_C})
+\frac{I_t}{Z_t}=\alpha\frac{I_A}{Z_A}+\beta\frac{I_B}{Z_B}+\gamma\frac{I_C}{Z_C} \quad\Longrightarrow\quad I_t=\frac{1}{\frac{\alpha}{Z_A}+\frac{\beta}{Z_B}+\frac{\gamma}{Z_C}}\cdot(\alpha\frac{I_A}{Z_A}+\beta\frac{I_B}{Z_B}+\gamma\frac{I_C}{Z_C})
    \]</div>
 <h5 id="_15">代码实战<a class="headerlink" href="#_15" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// * v[i].w() is the vertex view space depth value z.</span>
@@ -1527,27 +1527,29 @@ L_s=k_s\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{h})^p,\quad \mathbf{
 <p>值得注意的是，半程向量与表面法线的夹角通常会小于观察与反射向量的夹角。所以，如果你想获得和冯氏着色类似的效果，就必须在使用 Blinn-Phong 模型时将镜面反光度设置更高一点。通常我们会选择冯氏着色时反光度分量的2到4倍。另外，Blinn-Phong 模型的计算复杂度也低于 Phong 模型。</p>
 <h5 id="_18">局部光照模型总结<a class="headerlink" href="#_18" title="Permanent link">¶</a></h5>
 <ul>
-<li>
-<p><strong>泛光模型</strong> $$
-  L_a=k_aI_a
-  $$</p>
-</li>
-<li>
-<p><strong>Lambert 模型</strong> $$
-  L_r=k_aI_a+k_d\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{l})
-  $$</p>
-</li>
-<li>
-<p><strong>Phong 模型</strong> $$
-  L_r=k_aI_a+k_d\cdot\frac{I}{r<sup>2}\cdot\max(0,\mathbf{n}\cdot\mathbf{l})+k_s\cdot\frac{I}{r</sup>2}\cdot\max(0,\mathbf{R}\cdot\mathbf{v})^p,\quad \mathbf{R}=2(\mathbf{l}\cdot\mathbf{n})\mathbf{n}-\mathbf{l}
-  $$</p>
-</li>
-<li>
-<p><strong>Blinn-Phong 模型</strong> $$
-  L_r=k_aI_a+k_d\cdot\frac{I}{r<sup>2}\cdot\max(0,\mathbf{n}\cdot\mathbf{l})+k_s\cdot\frac{I}{r</sup>2}\cdot\max(0,\mathbf{n}\cdot\mathbf{h})^p,\quad \mathbf{h}=\frac{\mathbf{v}+\mathbf{l}}{||\mathbf{v}+\mathbf{l}||}
-  $$</p>
-</li>
+<li><strong>泛光模型</strong> </li>
 </ul>
+<div class="arithmatex">\[
+L_a=k_aI_a
+\]</div>
+<ul>
+<li><strong>Lambert 模型</strong> </li>
+</ul>
+<div class="arithmatex">\[
+L_r=k_aI_a+k_d\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{l})
+\]</div>
+<ul>
+<li><strong>Phong 模型</strong> </li>
+</ul>
+<div class="arithmatex">\[
+L_r=k_aI_a+k_d\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{l})+k_s\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{R}\cdot\mathbf{v})^p,\quad \mathbf{R}=2(\mathbf{l}\cdot\mathbf{n})\mathbf{n}-\mathbf{l}
+  \]</div>
+<ul>
+<li><strong>Blinn-Phong 模型</strong> </li>
+</ul>
+<div class="arithmatex">\[
+L_r=k_aI_a+k_d\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{l})+k_s\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{h})^p,\quad \mathbf{h}=\frac{\mathbf{v}+\mathbf{l}}{||\mathbf{v}+\mathbf{l}||}
+  \]</div>
 <h4 id="_19">着色方法<a class="headerlink" href="#_19" title="Permanent link">¶</a></h4>
 <p>在前文中，已经介绍了局部光照模型的基本原理，其中利用了入射向量、法线向量以及观察向量之间的关系来建模光线的反射特性。然而，并未明确指出法线向量是三角形面的法线向量还是三角形顶点的法线向量。因此，这引出了本节的主题——着色频率，包括面着色、顶点着色与像素着色。分别对应了三种不同的着色方法，Flat Shading、Gouraud Shading 与 Phong Shading。</p>
 <h5 id="flat-shading">Flat Shading / 面着色<a class="headerlink" href="#flat-shading" title="Permanent link">¶</a></h5>
@@ -1567,7 +1569,7 @@ L_s=k_s\cdot\frac{I}{r^2}\cdot\max(0,\mathbf{n}\cdot\mathbf{h})^p,\quad \mathbf{
 </li>
 </ul>
 <div class="arithmatex">\[
-    \mathbf{N_v}=\frac{\sum_i\mathbf{N_i}}{||\sum_i\mathbf{N_i}||}
+\mathbf{N_v}=\frac{\sum_i\mathbf{N_i}}{||\sum_i\mathbf{N_i}||}
     \]</div>
 <ul>
 <li>计算多边形内任一点的颜色。Gouraud Shading 仅对多边形的顶点进行着色计算，多边形内部的颜色值通过使用重心坐标插值得到。（重心插值详细可看之前的笔记。）</li>

@@ -4505,7 +4505,7 @@
 <p>C++程序在执行时，将内存大方向划分为 <strong>4个区域</strong> - <strong>代码区</strong> ：存放函数体的二进制代码，由操作系统进行管理的
 - <strong>全局区</strong> ：存放全局变量和静态变量以及常量
 - <strong>栈区</strong> ：由编译器自动分配释放，存放函数的参数值，局部变量等
--  <strong>堆区</strong>  ： <strong>内存四区意义</strong> ：</p>
+- <strong>堆区</strong> ： <strong>内存四区意义</strong> ：</p>
 <ul>
 <li>不同区域存放的数据，赋予不同的生命周期，给我们更大的灵活编程</li>
 </ul>
@@ -4580,7 +4580,7 @@
 <h4 id="_5">栈区<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>由编译器自动分配释放，存放函数的参数值、局部变量等</li>
-<li><strong>注意事项</strong>   ：不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</li>
+<li><strong>注意事项</strong> ：不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</li>
 </ul>
 <h5 id="_6">示例：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="c1">// 形参数据也会放在栈区</span>
@@ -4742,7 +4742,7 @@
 <p>通过引用参数产生的效果同按地址传递是一样的。引用的语法更清楚简单。</p>
 <ul>
 <li>
-<p><strong>作用：</strong>  函数传参时，可以利用引用的技术让形参修饰实参</p>
+<p><strong>作用：</strong> 函数传参时，可以利用引用的技术让形参修饰实参</p>
 </li>
 <li>
 <p><strong>优点：</strong> 可以简化指针修改实参</p>
@@ -4901,7 +4901,7 @@
 <p>在C++中，函数的形参列表中的形参是可以有默认值的。</p>
 <ul>
 <li><strong>语法</strong> ：<code>返回值类型  函数名 （参数= 默认值）{}</code></li>
-<li><strong>注意事项</strong>   ：</li>
+<li><strong>注意事项</strong> ：</li>
 <li>如果某个位置参数有默认值，那么从这个位置往后，从左向右，必须都要有默认值</li>
 <li>如果函数声明有默认值，函数实现的时候就不能有默认参数；反之亦然。即函数实现和声明只能有一者有默认值。</li>
 </ul>
@@ -4951,7 +4951,7 @@
 <h4 id="331">3.3.1 函数重载概述<a class="headerlink" href="#331" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>作用：</strong>  函数名可以相同，提高复用性</p>
+<p><strong>作用：</strong> 函数名可以相同，提高复用性</p>
 </li>
 <li>
 <p><strong>函数重载满足条件：</strong> * 同一个作用域下</p>
@@ -6302,7 +6302,7 @@ return 0;
 <p><img alt="image-20230404131353062" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202304041313283.png" /></p>
 <ul>
 <li>
-<p><strong>注意事项</strong>   ：</p>
+<p><strong>注意事项</strong> ：</p>
 </li>
 <li>
 <p>全局重载与局部重载的本质：</p>

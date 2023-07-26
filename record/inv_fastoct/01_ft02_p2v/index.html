@@ -1902,7 +1902,7 @@
 </ol>
 <p><img alt="image-20230610232832378" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306102328961.png" /></p>
 <div class="arithmatex">\[
-   \textcolor{blue}{\begin{pmatrix}x' \\ y' \\ z'\end{pmatrix}=\frac{1}{max}\begin{pmatrix}x \\ y \\ z\end{pmatrix}},
+\textcolor{blue}{\begin{pmatrix}x' \\ y' \\ z'\end{pmatrix}=\frac{1}{max}\begin{pmatrix}x \\ y \\ z\end{pmatrix}},
    \quad\mathbf{where}\ \ 
    max=\mathrm{max}(\mathrm{abs}(\mathbf{bbox}))
    \]</div>
@@ -1911,7 +1911,7 @@
 </ol>
 <p><img alt="image-20230611012150949" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306110121036.png" /></p>
 <div class="arithmatex">\[
-   \begin{pmatrix}x'' \\ y'' \\ z''\end{pmatrix}=\begin{pmatrix}W/2 &amp;0 &amp; 0\\ 0 &amp; H/2 &amp; 0  \\ 0 &amp; 0 &amp; D/2\end{pmatrix}\begin{bmatrix}\begin{pmatrix}x' \\ y' \\ z'\end{pmatrix}+\begin{pmatrix}1 \\ 1 \\ 1\end{pmatrix}\end{bmatrix}
+\begin{pmatrix}x'' \\ y'' \\ z''\end{pmatrix}=\begin{pmatrix}W/2 &amp;0 &amp; 0\\ 0 &amp; H/2 &amp; 0  \\ 0 &amp; 0 &amp; D/2\end{pmatrix}\begin{bmatrix}\begin{pmatrix}x' \\ y' \\ z'\end{pmatrix}+\begin{pmatrix}1 \\ 1 \\ 1\end{pmatrix}\end{bmatrix}
    \quad\Rightarrow\quad \textcolor{blue}{
    \begin{pmatrix}x'' \\ y'' \\ z'' \\ 1\end{pmatrix}=\frac{1}{2}\begin{pmatrix}W &amp;0 &amp; 0 &amp; W\\ 0 &amp; H &amp; 0 &amp; H  \\ 0 &amp; 0 &amp; D &amp; D \\ 0 &amp; 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \\ y' \\ z' \\ 1\end{pmatrix}
    }

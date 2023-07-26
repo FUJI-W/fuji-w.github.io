@@ -1999,7 +1999,7 @@
 
 <h1 id="c">C++提高编程<a class="headerlink" href="#c" title="Permanent link">&para;</a></h1>
 <ul>
-<li>本阶段主要针对C++  <strong>泛型编程</strong>  和 <strong>STL</strong> 技术做详细讲解，探讨C++更深层的使用。</li>
+<li>本阶段主要针对C++ <strong>泛型编程</strong> 和 <strong>STL</strong> 技术做详细讲解，探讨C++更深层的使用。</li>
 </ul>
 <h2 id="1">1 模板<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 模板的概念<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
@@ -2027,14 +2027,14 @@
 <h3 id="12">1.2 函数模板<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>除了面向对象，C++另一种编程思想称为  <strong>泛型编程</strong>  ，主要利用的技术就是 <strong>模板</strong> 。</p>
+<p>除了面向对象，C++另一种编程思想称为 <strong>泛型编程</strong> ，主要利用的技术就是 <strong>模板</strong> 。</p>
 </li>
 <li>
 <p>C++提供两种模板机制: <strong>函数模板</strong> 和 <strong>类模板</strong> 。</p>
 </li>
 </ul>
 <h4 id="121">1.2.1 函数模板语法<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
-<p>函数模板 <strong>作用：</strong> - 建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个  <strong>虚拟的类型</strong>  来代表。 <strong>语法：</strong> <code>C++
+<p>函数模板 <strong>作用：</strong> - 建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个 <strong>虚拟的类型</strong> 来代表。 <strong>语法：</strong> <code>C++
 template&lt;typename T&gt;
 函数声明或定义</code> <strong>解释：</strong> - <code>template</code>  ---  声明创建模板</p>
 <ul>
@@ -2418,7 +2418,7 @@ void f(T a, T b)
 <a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a>
 <a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a>类模板 **作用** ：
 <a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a>
-<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>* 建立一个通用类，类中的成员 数据类型可以不具体制定，用一个  **虚拟的类型**  来代表。 **语法：** ```c++
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>* 建立一个通用类，类中的成员 数据类型可以不具体制定，用一个 **虚拟的类型** 来代表。 **语法：** ```c++
 <a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>template&lt;typename T&gt;
 <a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a>类
 <a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a>``` **解释：** - `template`  ---  声明创建模板
@@ -2467,7 +2467,7 @@ void f(T a, T b)
 <a id="__codelineno-1-155" name="__codelineno-1-155" href="#__codelineno-1-155"></a>
 <a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a>类模板与函数模板区别主要有两点：
 <a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a>
-<a id="__codelineno-1-158" name="__codelineno-1-158" href="#__codelineno-1-158"></a>1. **类模板没有自动类型推导的使用方式** 2. 类模板在模板参数列表中**可以有默认参数**
+<a id="__codelineno-1-158" name="__codelineno-1-158" href="#__codelineno-1-158"></a>1. **类模板没有自动类型推导的使用方式** 2. 类模板在模板参数列表中 **可以有默认参数** 
 <a id="__codelineno-1-159" name="__codelineno-1-159" href="#__codelineno-1-159"></a> **示例：** ```C++
 <a id="__codelineno-1-160" name="__codelineno-1-160" href="#__codelineno-1-160"></a>#include &lt;string&gt;
 <a id="__codelineno-1-161" name="__codelineno-1-161" href="#__codelineno-1-161"></a>//类模板
@@ -3111,7 +3111,7 @@ private:
 <a id="__codelineno-5-105" name="__codelineno-5-105" href="#__codelineno-5-105"></a><span class="o">*</span><span class="w"> </span><span class="n">为了建立数据结构和算法的一套标准</span><span class="p">,</span><span class="n">诞生了</span><span class="w"> </span><span class="o">**</span><span class="n">STL</span><span class="o">**</span><span class="w"> </span><span class="err">###</span><span class="w"> </span><span class="mf">2.2</span><span class="w"> </span><span class="n">STL基本概念</span>
 <a id="__codelineno-5-106" name="__codelineno-5-106" href="#__codelineno-5-106"></a>
 <a id="__codelineno-5-107" name="__codelineno-5-107" href="#__codelineno-5-107"></a><span class="o">*</span><span class="w"> </span><span class="n">STL</span><span class="p">(</span><span class="n">Standard</span><span class="w"> </span><span class="n">Template</span><span class="w"> </span><span class="n">Library</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">标准模板库</span><span class="o">**</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="o">*</span><span class="w"> </span><span class="n">STL</span><span class="w"> </span><span class="n">从广义上分为</span><span class="o">:</span><span class="w"> </span><span class="o">**</span><span class="n">容器</span><span class="p">(</span><span class="n">container</span><span class="p">)</span><span class="err">；</span><span class="w"> </span><span class="n">算法</span><span class="p">(</span><span class="n">algorithm</span><span class="p">)</span><span class="err">；</span><span class="w"> </span><span class="n">迭代器</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span><span class="o">**</span><span class="w"> </span><span class="o">*</span><span class="w">  </span><span class="o">**</span><span class="n">容器</span><span class="o">**</span><span class="w">  </span><span class="n">和</span><span class="w"> </span><span class="o">**</span><span class="n">算法</span><span class="o">**</span><span class="w"> </span><span class="n">之间通过</span><span class="w"> </span><span class="o">**</span><span class="n">迭代器</span><span class="o">**</span><span class="w"> </span><span class="n">进行无缝连接</span><span class="err">。</span>
+<a id="__codelineno-5-108" name="__codelineno-5-108" href="#__codelineno-5-108"></a><span class="o">*</span><span class="w"> </span><span class="n">STL</span><span class="w"> </span><span class="n">从广义上分为</span><span class="o">:</span><span class="w"> </span><span class="o">**</span><span class="n">容器</span><span class="p">(</span><span class="n">container</span><span class="p">)</span><span class="err">；</span><span class="w"> </span><span class="n">算法</span><span class="p">(</span><span class="n">algorithm</span><span class="p">)</span><span class="err">；</span><span class="w"> </span><span class="n">迭代器</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span><span class="o">**</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">**</span><span class="n">容器</span><span class="o">**</span><span class="w"> </span><span class="n">和</span><span class="w"> </span><span class="o">**</span><span class="n">算法</span><span class="o">**</span><span class="w"> </span><span class="n">之间通过</span><span class="w"> </span><span class="o">**</span><span class="n">迭代器</span><span class="o">**</span><span class="w"> </span><span class="n">进行无缝连接</span><span class="err">。</span>
 <a id="__codelineno-5-109" name="__codelineno-5-109" href="#__codelineno-5-109"></a><span class="o">*</span><span class="w"> </span><span class="n">STL</span><span class="w"> </span><span class="n">几乎所有的代码都采用了模板类或者模板函数</span>
 <a id="__codelineno-5-110" name="__codelineno-5-110" href="#__codelineno-5-110"></a>
 <a id="__codelineno-5-111" name="__codelineno-5-111" href="#__codelineno-5-111"></a><span class="cp">### 2.3 STL六大组件</span>
@@ -3129,10 +3129,10 @@ private:
 <a id="__codelineno-5-123" name="__codelineno-5-123" href="#__codelineno-5-123"></a>
 <a id="__codelineno-5-124" name="__codelineno-5-124" href="#__codelineno-5-124"></a><span class="o">-</span><span class="w"> </span><span class="n">常用的数据结构</span><span class="err">：</span><span class="n">数组</span><span class="p">,</span><span class="w"> </span><span class="n">链表</span><span class="p">,</span><span class="n">树</span><span class="p">,</span><span class="w"> </span><span class="n">栈</span><span class="p">,</span><span class="w"> </span><span class="n">队列</span><span class="p">,</span><span class="w"> </span><span class="n">集合</span><span class="p">,</span><span class="w"> </span><span class="n">映射表</span><span class="w"> </span><span class="n">等</span>
 <a id="__codelineno-5-125" name="__codelineno-5-125" href="#__codelineno-5-125"></a>
-<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="n">这些容器分为</span><span class="w"> </span><span class="o">**</span><span class="n">序列式容器</span><span class="o">**</span><span class="w">  </span><span class="n">和</span><span class="w">   </span><span class="o">**</span><span class="n">关联式容器</span><span class="o">**</span><span class="w">   </span><span class="n">两种</span><span class="o">:</span>
+<a id="__codelineno-5-126" name="__codelineno-5-126" href="#__codelineno-5-126"></a><span class="n">这些容器分为</span><span class="w"> </span><span class="o">**</span><span class="n">序列式容器</span><span class="o">**</span><span class="w"> </span><span class="n">和</span><span class="w"> </span><span class="o">**</span><span class="n">关联式容器</span><span class="o">**</span><span class="w"> </span><span class="n">两种</span><span class="o">:</span>
 <a id="__codelineno-5-127" name="__codelineno-5-127" href="#__codelineno-5-127"></a>
-<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="o">-</span><span class="w">  </span><span class="o">**</span><span class="n">序列式容器</span><span class="o">**</span><span class="w">  </span><span class="o">:</span><span class="n">强调值的排序</span><span class="err">，</span><span class="n">序列式容器中的每个元素均有固定的位置</span><span class="err">。</span>
-<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="o">-</span><span class="w"> </span><span class="err">​</span><span class="w">    </span><span class="o">**</span><span class="n">关联式容器</span><span class="o">**</span><span class="w">   </span><span class="o">:</span><span class="n">二叉树结构</span><span class="err">，</span><span class="n">各元素之间没有严格的物理上的顺序关系</span><span class="w"> </span><span class="o">**</span><span class="n">算法</span><span class="err">：</span><span class="o">**</span><span class="w"> </span><span class="n">问题之解法也</span>
+<a id="__codelineno-5-128" name="__codelineno-5-128" href="#__codelineno-5-128"></a><span class="o">-</span><span class="w">  </span><span class="o">**</span><span class="n">序列式容器</span><span class="o">**</span><span class="w"> </span><span class="o">:</span><span class="n">强调值的排序</span><span class="err">，</span><span class="n">序列式容器中的每个元素均有固定的位置</span><span class="err">。</span>
+<a id="__codelineno-5-129" name="__codelineno-5-129" href="#__codelineno-5-129"></a><span class="o">-</span><span class="w"> </span><span class="err">​</span><span class="w">  </span><span class="o">**</span><span class="n">关联式容器</span><span class="o">**</span><span class="w"> </span><span class="o">:</span><span class="n">二叉树结构</span><span class="err">，</span><span class="n">各元素之间没有严格的物理上的顺序关系</span><span class="w"> </span><span class="o">**</span><span class="n">算法</span><span class="err">：</span><span class="o">**</span><span class="w"> </span><span class="n">问题之解法也</span>
 <a id="__codelineno-5-130" name="__codelineno-5-130" href="#__codelineno-5-130"></a>
 <a id="__codelineno-5-131" name="__codelineno-5-131" href="#__codelineno-5-131"></a><span class="o">-</span><span class="w"> </span><span class="n">有限的步骤</span><span class="err">，</span><span class="n">解决逻辑或数学上的问题</span><span class="err">，</span><span class="n">这一门学科我们叫做算法</span><span class="p">(</span><span class="n">Algorithms</span><span class="p">)</span>
 <a id="__codelineno-5-132" name="__codelineno-5-132" href="#__codelineno-5-132"></a>
@@ -4141,7 +4141,7 @@ return 0;
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>#### 3.2.8 vector预留空间 **功能描述：** * 减少vector在动态扩展容量时的扩展次数 **函数原型：** * `reserve(int len);`//容器预留len个元素长度，预留位置不初始化，元素不可访问。
 <a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>   **示例：** ```C++
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a> **示例：** ```C++
 <a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>#include &lt;vector&gt;
 <a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
 <a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>void test01()
@@ -4714,7 +4714,7 @@ int main() {
     system("pause");
 
     return 0;
-}</code> <strong>总结：</strong>  选取不同的容器操作数据，可以提升代码的效率
+}</code> <strong>总结：</strong> 选取不同的容器操作数据，可以提升代码的效率
 
 
 
@@ -5463,7 +5463,7 @@ int main() {
 </ul>
 <h3 id="38-set-multiset">3.8 set/ multiset 容器<a class="headerlink" href="#38-set-multiset" title="Permanent link">&para;</a></h3>
 <h4 id="381-set">3.8.1 set基本概念 <strong>简介：</strong> * 所有元素都会在插入时自动被排序<a class="headerlink" href="#381-set" title="Permanent link">&para;</a></h4>
-<p><strong>本质：</strong> * set/multiset属于   <strong>关联式容器</strong>   ，底层结构是用 <strong>二叉树</strong> 实现。 <strong>set和multiset区别</strong> ：</p>
+<p><strong>本质：</strong> * set/multiset属于 <strong>关联式容器</strong> ，底层结构是用 <strong>二叉树</strong> 实现。 <strong>set和multiset区别</strong> ：</p>
 <ul>
 <li>set不允许容器中有重复的元素</li>
 <li>multiset允许容器中有重复的元素</li>
@@ -5945,7 +5945,7 @@ int main() {
 <li>pair中第一个元素为key（键值），起到索引作用，第二个元素为value（实值）</li>
 <li>所有元素都会根据元素的键值自动排序</li>
 </ul>
-<p><strong>本质：</strong> * map/multimap属于   <strong>关联式容器</strong>   ，底层结构是用二叉树实现。 <strong>优点：</strong> * 可以根据key值快速找到value值</p>
+<p><strong>本质：</strong> * map/multimap属于 <strong>关联式容器</strong> ，底层结构是用二叉树实现。 <strong>优点：</strong> * 可以根据key值快速找到value值</p>
 <p>map和multimap <strong>区别</strong> ：</p>
 <ul>
 <li>map不允许容器中有重复key值元素</li>
@@ -6393,7 +6393,7 @@ int main() {
 </ul>
 <h2 id="4-stl-">4 STL- 函数对象<a class="headerlink" href="#4-stl-" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 函数对象<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
-<h4 id="411">4.1.1 函数对象概念 <strong>概念：</strong> * 重载 <strong>函数调用操作符</strong> 的类，其对象常称为 <strong>函数对象</strong>  * <strong>函数对象</strong> 使用重载的()时，行为类似函数调用，也叫**仿函数**<a class="headerlink" href="#411" title="Permanent link">&para;</a></h4>
+<h4 id="411">4.1.1 函数对象概念 <strong>概念：</strong> * 重载 <strong>函数调用操作符</strong> 的类，其对象常称为 <strong>函数对象</strong> * <strong>函数对象</strong> 使用重载的()时，行为类似函数调用，也叫 <strong>仿函数</strong><a class="headerlink" href="#411" title="Permanent link">&para;</a></h4>
 <p><strong>本质：</strong> 函数对象(仿函数)是一个 <strong>类</strong> ，不是一个函数</p>
 <h4 id="412">4.1.2  函数对象使用 <strong>特点：</strong> * 函数对象在使用时，可以像普通函数那样调用, 可以有参数，可以有返回值<a class="headerlink" href="#412" title="Permanent link">&para;</a></h4>
 <ul>
@@ -6814,7 +6814,7 @@ system(&quot;pause&quot;);
 return 0;
 </code></pre></div>
 <p>}
-``` <strong>总结：</strong>  搬运的目标容器必须要提前开辟空间，否则无法正常搬运。</p>
+``` <strong>总结：</strong> 搬运的目标容器必须要提前开辟空间，否则无法正常搬运。</p>
 <h3 id="52">5.2 常用查找算法<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <p>学习目标：</p>
 <ul>
@@ -7154,7 +7154,7 @@ system(&quot;pause&quot;);
 return 0;
 </code></pre></div>
 <p>}
-<code>`` **总结：**  统计自定义数据类型时候，需要配合重载</code>operator==`</p>
+<code>`` **总结：** 统计自定义数据类型时候，需要配合重载</code>operator==`</p>
 <h4 id="526-count_if-count_ifiterator-beg-iterator-end-_pred">5.2.6 count_if <strong>功能描述：</strong> * 按条件统计元素个数 <strong>函数原型：</strong> - <code>count_if(iterator beg, iterator end, _Pred);</code><a class="headerlink" href="#526-count_if-count_ifiterator-beg-iterator-end-_pred" title="Permanent link">&para;</a></h4>
 <p>// 按条件统计元素出现次数</p>
 <p>// beg 开始迭代器</p>
@@ -7732,7 +7732,7 @@ system(&quot;pause&quot;);
 return 0;
 </code></pre></div>
 <p>}
-``` <strong>总结：</strong>  </p>
+``` <strong>总结：</strong> </p>
 <ul>
 <li>求交集的两个集合必须的有序序列</li>
 <li>目标容器开辟空间需要从 <strong>两个容器中取小值</strong> * set_intersection返回值既是交集中最后一个元素的位置</li>
@@ -7783,7 +7783,7 @@ system(&quot;pause&quot;);
 return 0;
 </code></pre></div>
 <p>}
-``` <strong>总结：</strong>  </p>
+``` <strong>总结：</strong> </p>
 <ul>
 <li>求并集的两个集合必须的有序序列</li>
 <li>目标容器开辟空间需要 <strong>两个容器相加</strong> - set_union返回值既是并集中最后一个元素的位置</li>
@@ -7840,7 +7840,7 @@ system(&quot;pause&quot;);
 return 0;
 </code></pre></div>
 <p>}
-``` <strong>总结：</strong>  </p>
+``` <strong>总结：</strong> </p>
 <ul>
 <li>求差集的两个集合必须的有序序列</li>
 <li>目标容器开辟空间需要从 <strong>两个容器取较大值</strong> - set_difference返回值既是差集中最后一个元素的位置</li>
