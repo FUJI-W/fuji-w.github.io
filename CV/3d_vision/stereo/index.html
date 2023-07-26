@@ -2570,7 +2570,7 @@ X_w \\ Y_w \\ Z_w \\ 1
 K\left[R,\mathbf{T}\right]X
 \end{aligned}
 \]</div>
-<p>其中 <strong><span class="arithmatex">\(s\)</span> 为尺度因子，<span class="arithmatex">\(K\)</span> 为摄像机内参数，<span class="arithmatex">\(R\)</span> 为旋转矩阵，<span class="arithmatex">\(T\)</span> 为平移向量</strong> 。</p>
+<p>其中 <strong><span class="arithmatex">\(s\)</span> 为尺度因子，<span class="arithmatex">\(K\)</span> 为摄像机内参数，<span class="arithmatex">\(R\)</span> 为旋转矩阵，<span class="arithmatex">\(T\)</span> 为平移向量</strong>  。</p>
 <h4 id="_20">相机的畸变系数<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>上述的线性模型并不能准确描述物体与图像的对应关系，这是因为 <strong>光学镜头具有透视失真，会导致图像发生偏差，这是镜头的固有属性无法消除。</strong> 为了减少图像偏差，需要明确镜头的畸变系数，对图像进行校正。常见的畸变主要有 <strong>径向畸变</strong> 和 <strong>切向畸变</strong> 。</p>
 <h5 id="_21">径向畸变<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h5>
@@ -2612,7 +2612,7 @@ $$ <strong>这 5 个参数可以在相机标定的过程中得到。明确这 <u
 <div class="arithmatex">\[
 sM=K[R,T]X
 \]</div>
-<p>其中 <strong><span class="arithmatex">\(s\)</span> 为尺度因子，<span class="arithmatex">\(K\)</span> 为摄像机内参数，<span class="arithmatex">\(R\)</span> 为旋转矩阵，<span class="arithmatex">\(T\)</span> 为平移向量</strong> 。令</p>
+<p>其中 <strong><span class="arithmatex">\(s\)</span> 为尺度因子，<span class="arithmatex">\(K\)</span> 为摄像机内参数，<span class="arithmatex">\(R\)</span> 为旋转矩阵，<span class="arithmatex">\(T\)</span> 为平移向量</strong>  。令</p>
 <div class="arithmatex">\[
 K=\left[
 \begin{matrix}
@@ -2640,7 +2640,7 @@ H=[h_1\ h_2\ h_3] = \lambda K[r_1\ r_2\ t]
 r_1=\frac{1}{\lambda}K^{-1}h_1   \\
 r_2=\frac{1}{\lambda}K^{-1}h_2
 \]</div>
-<p>由于旋转矩阵是个酉矩阵，<span class="arithmatex">\(r_1\)</span> 和 <span class="arithmatex">\(r_2\)</span> 正交，可得 <strong>约束条件</strong> ：</p>
+<p>由于旋转矩阵是个酉矩阵，<span class="arithmatex">\(r_1\)</span> 和 <span class="arithmatex">\(r_2\)</span> 正交，可得  <strong>约束条件</strong>  ：</p>
 <div class="arithmatex">\[
 \begin{aligned}
 r_1^Tr_2=0 &amp; \iff h_1^TK^{-T}K^{-1}h_2=0\\
@@ -2675,7 +2675,7 @@ B_{31} &amp; B_{32} &amp; B_{33}
 h_i^TBh_j = v^T_{ij} \mathbf{b} \\
 v_{ij}=\left[ \begin{array}{cccccc} h_{i1}h_{j1} &amp; h_{i1}h_{j2}+h_{i2}h_{j1} &amp; h_{i2}h_{j2} &amp; h_{i3}h_{j1}+h_{i1}h_{j3} &amp; h_{i3}h_{j2}+h_{i2}h_{j3} &amp; h_{i3}h_{j3} \end{array} \right]^T
 \]</div>
-<p>利用 <strong>约束条件</strong> 可以得到：</p>
+<p>利用  <strong>约束条件</strong>  可以得到：</p>
 <p>$$
 \left[ \begin{array}{c} v^T_{12} \ (v_{11}-v_{22})^T \end{array} \right] \mathbf{b}=0
 $$ <strong>通过上式，我们至少需要三幅包含棋盘格的图像，可以计算得到 <span class="arithmatex">\(B\)</span></strong> ，然后通过 <strong>Cholesky分解</strong> ， <strong>得到相机的内参数矩阵 <span class="arithmatex">\(K\)</span> 。</strong> ##### 计算外参数矩阵</p>

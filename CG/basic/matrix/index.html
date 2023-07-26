@@ -2127,14 +2127,15 @@
 <p><img alt="image.png" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303160017290.png" /></p>
 <h3 id="_4">视图矩阵<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>视图转换的过程可以拆分为以下子过程，即 <span class="arithmatex">\(M_{view} = R_{view} \cdot T_{view}\)</span>： <strong>第一步</strong> ，将相机的位置 <strong><span class="arithmatex">\(\vec{e}\)</span></strong> 转换到原点 <span class="arithmatex">\((0,0,0)\)</span></p>
-<p>$$
+<div class="arithmatex">\[
 T_{\text {view }}=\left[\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; -x_{e} \
-0 &amp; 1 &amp; 0 &amp; -y_{e} \
-0 &amp; 0 &amp; 1 &amp; -z_{e} \
+1 &amp; 0 &amp; 0 &amp; -x_{e} \\
+0 &amp; 1 &amp; 0 &amp; -y_{e} \\
+0 &amp; 0 &amp; 1 &amp; -z_{e} \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]
-$$ <strong>第二步</strong> ，将朝向 <strong><span class="arithmatex">\(\hat{g}\)</span></strong> 转换到<span class="arithmatex">\(z\)</span>轴负方向，向上方向 <strong><span class="arithmatex">\(\hat{t}\)</span></strong> 转换到<span class="arithmatex">\(y\)</span>轴正方向， <strong><span class="arithmatex">\(\hat{g} × \hat{t}\)</span></strong> 转换到<span class="arithmatex">\(x\)</span>轴正方向</p>
+\]</div>
+<p><strong>第二步</strong> ，将朝向 <strong><span class="arithmatex">\(\hat{g}\)</span></strong> 转换到<span class="arithmatex">\(z\)</span>轴负方向，向上方向 <strong><span class="arithmatex">\(\hat{t}\)</span></strong> 转换到<span class="arithmatex">\(y\)</span>轴正方向， <strong><span class="arithmatex">\(\hat{g} × \hat{t}\)</span></strong> 转换到<span class="arithmatex">\(x\)</span>轴正方向</p>
 <ul>
 <li>
 <p>以 <span class="arithmatex">\(\hat{g}\)</span> 为例，要将 <span class="arithmatex">\((x_{\hat{g}}, y_{\hat{g}}, z_{\hat{g}})\)</span> 旋转到 <span class="arithmatex">\((0,1,0)\)</span> 方向上，即求出旋转矩阵 <span class="arithmatex">\(R\)</span> ，满足 <span class="arithmatex">\({R}\cdot (x_{\hat{g}}, y_{\hat{g}}, z_{\hat{g}})^T = (0,1,0)^T\)</span> 成立，也就是 <span class="arithmatex">\((x_{\hat{g}}, y_{\hat{g}}, z_{\hat{g}})^T ={R}^{-1}\cdot  (0,1,0)^T\)</span>。</p>
@@ -2144,7 +2145,7 @@ $$ <strong>第二步</strong> ，将朝向 <strong><span class="arithmatex">\(\h
 </li>
 </ul>
 <div class="arithmatex">\[
-  \left[\begin{array}{cccc}
+\left[\begin{array}{cccc}
   x_{\hat{g} \times \hat{t}} &amp; x_{\hat{t}} &amp; x_{\hat{g} } &amp; 0 \\
   y_{\hat{g} \times \hat{t}} &amp; y_{\hat{t}} &amp; y_{\hat{g} } &amp; 0 \\
   z_{\hat{g} \times \hat{t}} &amp; z_{\hat{t}} &amp; z_{\hat{g} } &amp; 0 \\
@@ -2160,7 +2161,7 @@ $$ <strong>第二步</strong> ，将朝向 <strong><span class="arithmatex">\(\h
 <li>求解上式可以求出 $R^{-1}_{view} $ ：</li>
 </ul>
 <div class="arithmatex">\[
-  R_{\text {view }}^{-1}=\left[\begin{array}{cccc}
+R_{\text {view }}^{-1}=\left[\begin{array}{cccc}
   x_{\hat{g} \times \hat{t}} &amp; x_{\hat{t}} &amp; x_{-\hat{g} } &amp; 0 \\
   y_{\hat{g} \times \hat{t}} &amp; y_{\hat{t}} &amp; y_{-\hat{g} } &amp; 0 \\
   z_{\hat{g} \times \hat{t}} &amp; z_{\hat{t}} &amp; z_{-\hat{g} } &amp; 0 \\
@@ -2171,26 +2172,27 @@ $$ <strong>第二步</strong> ，将朝向 <strong><span class="arithmatex">\(\h
 <li>对 <span class="arithmatex">\(R^{-1}_{view}\)</span> 求逆矩阵，得到旋转矩阵 <span class="arithmatex">\(R_{view}\)</span> ：</li>
 </ul>
 <div class="arithmatex">\[
-  R_{\text {view }}=\left[\begin{array}{cccc}
+R_{\text {view }}=\left[\begin{array}{cccc}
   x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \\
    x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \\
   x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \\
   0 &amp; 0 &amp; 0 &amp; 1
   \end{array}\right]
   \]</div>
-<p>结合上述两个过程，可得到最终的 <strong>视图转换矩阵为</strong> $$
+<p>结合上述两个过程，可得到最终的 <strong>视图转换矩阵为</strong> </p>
+<div class="arithmatex">\[
 M_{view}=R_{view}\cdot T_{view}=\left[\begin{array}{cccc}
-x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \
- x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \
-x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \
+x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \\
+ x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \\
+x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right] \cdot \left[\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; -x_{e} \
-0 &amp; 1 &amp; 0 &amp; -y_{e} \
-0 &amp; 0 &amp; 1 &amp; -z_{e} \
+1 &amp; 0 &amp; 0 &amp; -x_{e} \\
+0 &amp; 1 &amp; 0 &amp; -y_{e} \\
+0 &amp; 0 &amp; 1 &amp; -z_{e} \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]
-$$</p>
+\]</div>
 <hr />
 <h2 id="_5">投影转换<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>如下图所示，常见的投影转换有透视投影（perspective projection）和正交投影（orthographic projection）两种。透视投影的视景体为锥体，成像效果为近大远小；正交投影的视景体为长方体，成像效果为平行成像，远近一致。</p>
@@ -2238,7 +2240,7 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <li>根据相似三角形法则与视景体转换的原则Ⅱ，结合右上图，得 <span class="arithmatex">\(x→x'\)</span> 的关系式为 <span class="arithmatex">\(x'=\frac{n}{z} x\)</span> ，同理可得 <span class="arithmatex">\(y→y'\)</span> 的关系式为 <span class="arithmatex">\(y'=\frac{n}{z}y\)</span> ，此时有等式：</li>
 </ul>
 <div class="arithmatex">\[
-  M_{p e r s p \rightarrow \text { ortho }}\cdot\left(\begin{array}{l}
+M_{p e r s p \rightarrow \text { ortho }}\cdot\left(\begin{array}{l}
   x \\
   y \\
   z \\
@@ -2260,7 +2262,7 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <li>记 <span class="arithmatex">\(m_{ij}\)</span> 为矩阵 <span class="arithmatex">\(M_{persp→ortho}\)</span> 的第 <span class="arithmatex">\(i\)</span> 行第 <span class="arithmatex">\(j\)</span> 列的元素，根据上面的等式，有</li>
 </ul>
 <div class="arithmatex">\[
-  \begin{cases}
+\begin{cases}
   m_{11}\cdot x + m_{12}\cdot y + m_{13}\cdot z + m_{14}\cdot 1 = nx \\
   m_{21}\cdot x + m_{22}\cdot y + m_{23}\cdot z + m_{24}\cdot 1 = ny \\
   m_{41}\cdot x + m_{42}\cdot y + m_{43}\cdot z + m_{44}\cdot 1 = z
@@ -2270,7 +2272,7 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <li>根据上面的等式，可以解出 $M_{persp→ortho} $ 的部分参数，得到</li>
 </ul>
 <div class="arithmatex">\[
-  M_{\text {persp→ortho}}=\left[\begin{array}{cccc}
+M_{\text {persp→ortho}}=\left[\begin{array}{cccc}
   n &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; n &amp; 0 &amp; 0 \\
   ? &amp; ? &amp; ? &amp; ? \\
@@ -2281,7 +2283,7 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <li>根据视景体转换的原则Ⅰ，近平面的所有点的坐标不变，即对于任意的点 <span class="arithmatex">\((x,y,n,1)\)</span> ，恒有 <span class="arithmatex">\(M_{persp→ortho}\cdot(x,y,n,1)^T=(x,y,n,1)^T\)</span> 成立，得到</li>
 </ul>
 <div class="arithmatex">\[
-  \left[\begin{array}{cccc}
+\left[\begin{array}{cccc}
   n &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; n &amp; 0 &amp; 0 \\
   ? &amp; ? &amp; ? &amp; ? \\
@@ -2307,13 +2309,13 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <li>由上面的等式，可以得到</li>
 </ul>
 <div class="arithmatex">\[
-  m_{31}\cdot x+m_{32}\cdot y+m_{33}\cdot n+m_{34}\cdot 1=n^2
+m_{31}\cdot x+m_{32}\cdot y+m_{33}\cdot n+m_{34}\cdot 1=n^2
   \]</div>
 <ul>
 <li>上式并不足以解出参数，现考虑视景体转换的原则Ⅲ，远平面中心点的坐标不变且为 <span class="arithmatex">\((0,0,f)\)</span>，即有 <span class="arithmatex">\(M_{persp→ortho}\cdot (0,0,f,1)^T=(0,0,f,1)^T\)</span> 恒成立，得到</li>
 </ul>
 <div class="arithmatex">\[
-  \left[\begin{array}{cccc}
+\left[\begin{array}{cccc}
   n &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; n &amp; 0 &amp; 0 \\
   ? &amp; ? &amp; ? &amp; ? \\
@@ -2339,13 +2341,13 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <li>由上面的等式，可以得到</li>
 </ul>
 <div class="arithmatex">\[
-  m_{31}\cdot 0+m_{32}\cdot 0+m_{33}\cdot f+m_{34}\cdot 1=f^2
+m_{31}\cdot 0+m_{32}\cdot 0+m_{33}\cdot f+m_{34}\cdot 1=f^2
   \]</div>
 <ul>
 <li>联立两个等式，有</li>
 </ul>
 <div class="arithmatex">\[
-  \begin{cases}
+\begin{cases}
   m_{31}\cdot x+m_{32}\cdot y+m_{33}\cdot n+m_{34}\cdot 1=n^2 \\
   m_{31}\cdot 0+m_{32}\cdot 0+m_{33}\cdot f+m_{34}\cdot 1=f^2
   \end{cases}
@@ -2359,14 +2361,15 @@ M_{\text {ortho }}=\left[\begin{array}{cccc}
 <ul>
 <li>到此，我们求出了将视景体“压缩”到长方体的转换矩阵：</li>
 </ul>
-<p>$$
-  M_{\text {persp→ortho}}=\left[\begin{array}{cccc}
-  n &amp; 0 &amp; 0 &amp; 0 \
-  0 &amp; n &amp; 0 &amp; 0 \
-  0 &amp; 0 &amp; n+f &amp; -nf \
+<div class="arithmatex">\[
+M_{\text {persp→ortho}}=\left[\begin{array}{cccc}
+  n &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; n &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; n+f &amp; -nf \\
   0 &amp; 0 &amp; 1 &amp; 0
   \end{array}\right]
-  $$ <strong>第二步</strong> ，将长方形视景体转换到标准立方体，这一步与正交投影相同，根据前面的推导，有</p>
+  \]</div>
+<p><strong>第二步</strong> ，将长方形视景体转换到标准立方体，这一步与正交投影相同，根据前面的推导，有</p>
 <div class="arithmatex">\[
 M_{\text {ortho }}=\left[\begin{array}{cccc}
 \frac{2}{r-l} &amp; 0 &amp; 0 &amp; 0 \\
@@ -2409,7 +2412,7 @@ n &amp; 0 &amp; 0 &amp; 0 \\
 <li>根据相似三角形原则和参数定义，可知</li>
 </ul>
 <div class="arithmatex">\[
-  \begin{cases}
+\begin{cases}
   \tan {\frac{fovY}{2}}= \frac{t}{|n|} =\frac{-b}{|n|} \\
   \tan {\frac{fovX}{2}}= \frac{r}{|n|}= \frac{-l}{|n|} \\
   aspect=\frac{r}{t}=\frac{-l}{-b} \\
@@ -2420,7 +2423,7 @@ n &amp; 0 &amp; 0 &amp; 0 \\
 <li>根据上述关系式，可以推出</li>
 </ul>
 <p>$$
-  - \begin{cases}
+- \begin{cases}
     t = near\cdot \tan{\frac{fovY}{2}}=-b \ 
     r=near\cdot \tan{\frac{fovX}{2}}= near\cdot \tan{\frac{fovY}{2}}\cdot aspect=-l \
     n=-near, f=-far  (far&gt;near&gt;0)</p>
@@ -2431,7 +2434,7 @@ n &amp; 0 &amp; 0 &amp; 0 \\
 <li>将各参数代入到上一节得到的透视投影矩阵中，得到</li>
 </ul>
 <div class="arithmatex">\[
-  \begin{aligned}
+\begin{aligned}
   M_{persp} &amp;= \left[\begin{array}{cccc}
   \frac{2}{r-l} &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; \frac{2}{t-b} &amp; 0 &amp; 0 \\
@@ -2527,53 +2530,58 @@ M_{persp}=\left[\begin{array}{cccc}
 \end{aligned}
 \]</div>
 <h2 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<p>经过上面的推导，我们最终得到了将场景从初始的世界坐标系到屏幕坐标系的所有转换矩阵，如下 <strong>视图转换矩阵：</strong> $$
+<p>经过上面的推导，我们最终得到了将场景从初始的世界坐标系到屏幕坐标系的所有转换矩阵，如下 <strong>视图转换矩阵：</strong> </p>
+<div class="arithmatex">\[
 M_{view}=\left[\begin{array}{cccc}
-x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \
- x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \
-x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \
+x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \\
+ x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \\
+x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right] \cdot \left[\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; -x_{e} \
-0 &amp; 1 &amp; 0 &amp; -y_{e} \
-0 &amp; 0 &amp; 1 &amp; -z_{e} \
+1 &amp; 0 &amp; 0 &amp; -x_{e} \\
+0 &amp; 1 &amp; 0 &amp; -y_{e} \\
+0 &amp; 0 &amp; 1 &amp; -z_{e} \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]
-$$ <strong>透视投影转换矩阵：</strong> $$
+\]</div>
+<p><strong>透视投影转换矩阵：</strong> </p>
+<div class="arithmatex">\[
 \begin{aligned}
 M_{persp} &amp;= \left[\begin{array}{cccc}
-\frac{2}{r-l} &amp; 0 &amp; 0 &amp; 0 \
-0 &amp; \frac{2}{t-b} &amp; 0 &amp; 0 \
-0 &amp; 0 &amp; \frac{2}{n-f} &amp; 0 \
+\frac{2}{r-l} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{2}{t-b} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{2}{n-f} &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]\left[\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; -\frac{r+l}{2} \
-0 &amp; 1 &amp; 0 &amp; -\frac{t+b}{2} \
-0 &amp; 0 &amp; 1 &amp; -\frac{n+f}{2} \
+1 &amp; 0 &amp; 0 &amp; -\frac{r+l}{2} \\
+0 &amp; 1 &amp; 0 &amp; -\frac{t+b}{2} \\
+0 &amp; 0 &amp; 1 &amp; -\frac{n+f}{2} \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]\left[\begin{array}{cccc}
-n &amp; 0 &amp; 0 &amp; 0 \
-0 &amp; n &amp; 0 &amp; 0 \
-0 &amp; 0 &amp; n+f &amp; -nf \
+n &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; n &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; n+f &amp; -nf \\
 0 &amp; 0 &amp; 1 &amp; 0
-\end{array}\right]\
+\end{array}\right]\\
 &amp;=\left[\begin{array}{cccc}
-\frac{-1}{aspect\cdot \tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 &amp; 0 \
-0 &amp; \frac{-1}{\tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 \
-0 &amp; 0 &amp; \frac{-(near+far)}{far-near} &amp; \frac{-2\cdot near\cdot far}{far-near} \
+\frac{-1}{aspect\cdot \tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{-1}{\tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{-(near+far)}{far-near} &amp; \frac{-2\cdot near\cdot far}{far-near} \\
 0 &amp; 0 &amp; 1 &amp; 0
 \end{array}\right]
 \end{aligned}
-$$ <strong>视窗转换矩阵：</strong> $$
+\]</div>
+<p><strong>视窗转换矩阵：</strong> </p>
+<div class="arithmatex">\[
 \begin{aligned}M_{viewport}=
 \left[\begin{array}{cccc}
-\frac{width}{2} &amp; 0 &amp; 0 &amp; \frac{width}{2} \
-0 &amp; \frac{height}{2} &amp; 0 &amp; \frac{height}{2} \
-0 &amp; 0 &amp; 1 &amp; 0 \
+\frac{width}{2} &amp; 0 &amp; 0 &amp; \frac{width}{2} \\
+0 &amp; \frac{height}{2} &amp; 0 &amp; \frac{height}{2} \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right]
 \end{aligned}
-$$</p>
+\]</div>
 <p>对于初始世界坐标系下的场景坐标 $ (x,y,z) $ ，要将其最终呈现在屏幕上，即求其对应屏幕坐标系的点 <span class="arithmatex">\((x',y',z')\)</span> ，只需要利用下列等式计算即可：</p>
 <div class="arithmatex">\[
 (x',y',z',1)^T=M_{viewport}M_{persp}M_{view}(x,y,z,1)^T
