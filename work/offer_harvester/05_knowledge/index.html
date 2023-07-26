@@ -2260,10 +2260,12 @@
 <h5 id="2-vertex-shader">2. 顶点着色器（Vertex Shader）<a class="headerlink" href="#2-vertex-shader" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
-<p><strong>坐标变换</strong>：对传入的顶点数据进行坐标变换，由局部坐标到世界坐标到相机坐标再到裁剪坐标。即通过模型矩阵、观察矩阵、投影矩阵（即MVP矩阵）计算出顶点在裁剪空间（clip space）中的坐标。值得注意的是，对法线向量的变换不可以简单地右乘MVP矩阵，而应该右乘MVP的逆矩阵的转置矩阵，即 (MVP<span class="arithmatex">\(^{-1}\)</span>)<span class="arithmatex">\(^T\)</span>。</p>
+<p><strong>坐标变换</strong> ：对传入的顶点数据进行坐标变换，由局部坐标到世界坐标到相机坐标再到裁剪坐标。即通过模型矩阵、观察矩阵、投影矩阵（即MVP矩阵）计算出顶点在裁剪空间（clip space）中的坐标。值得注意的是，对法线向量的变换不可以简单地右乘MVP矩阵，而应该右乘MVP的逆矩阵的转置矩阵，即 (MVP<span class="arithmatex">\(^{-1}\)</span>)<span class="arithmatex">\(^T\)</span>。</p>
 </li>
 <li>
-<p><em><strong>顶点着色</strong>：顶点着色器是可编程的，可以在此阶段进行**平面着色（Flat Shading）**或**高洛德着色（Gouraud Shading）*</em>，然后经过后面的光栅化操作插值得到各个片元的颜色，但由于这种方法得到的光照比较不自然，所以一般在片段着色器进行光照计算。</p>
+<ul>
+<li><strong>顶点着色</strong> ：顶点着色器是可编程的，可以在此阶段进行 <strong>平面着色（Flat Shading）</strong> 或 <strong>高洛德着色（Gouraud Shading）</strong> ，然后经过后面的光栅化操作插值得到各个片元的颜色，但由于这种方法得到的光照比较不自然，所以一般在片段着色器进行光照计算。</li>
+</ul>
 </li>
 </ul>
 <h5 id="3">3. *曲面细分<a class="headerlink" href="#3" title="Permanent link">&para;</a></h5>
@@ -2276,15 +2278,19 @@
 </ul>
 <h5 id="5">5. 图元组装<a class="headerlink" href="#5" title="Permanent link">&para;</a></h5>
 <ul>
-<li><strong>图元装配</strong>：将输入的顶点组装成指定的图元，即根据索引将顶点链接在一起，组成点、线、面等图元。</li>
-<li><strong>视锥裁剪</strong>：裁剪掉视锥体外的图元或图元在视锥体外的部分（<a href="https://www.zhihu.com/question/64675018">裁剪过程</a>）。</li>
-<li><strong>透视除法</strong>：将裁剪空间中顶点的4个分量都除以 <span class="arithmatex">\(w\)</span> 分量，将顶点坐标转换到NDC空间。值得注意的是，透视除法对于顶点的三维坐标空间来说是非线性的变换，因此在根据NDC空间或之后的屏幕空间的顶点坐标对顶点属性进行插值计算时，需要做透视矫正。</li>
-<li><strong>视口变换</strong>：将顶点坐标从NDC空间（三维）变换到屏幕空间（二维）。</li>
+<li><strong>图元装配</strong> ：将输入的顶点组装成指定的图元，即根据索引将顶点链接在一起，组成点、线、面等图元。</li>
+<li><strong>视锥裁剪</strong> ：裁剪掉视锥体外的图元或图元在视锥体外的部分（<a href="https://www.zhihu.com/question/64675018">裁剪过程</a>）。</li>
+<li><strong>透视除法</strong> ：将裁剪空间中顶点的4个分量都除以 <span class="arithmatex">\(w\)</span> 分量，将顶点坐标转换到NDC空间。值得注意的是，透视除法对于顶点的三维坐标空间来说是非线性的变换，因此在根据NDC空间或之后的屏幕空间的顶点坐标对顶点属性进行插值计算时，需要做透视矫正。</li>
+<li><strong>视口变换</strong> ：将顶点坐标从NDC空间（三维）变换到屏幕空间（二维）。</li>
 </ul>
 <h5 id="6">6. 光栅化<a class="headerlink" href="#6" title="Permanent link">&para;</a></h5>
 <ul>
 <li>光栅化是将连续的图形转化为离散屏幕像素点的过程。光栅化会确定图元所覆盖的片段，利用顶点属性插值得到片段的属性信息，然后送到片段着色器进行颜色计算，我们这里需要注意到片段是像素的候选者，只有通过后续的测试，片段才会成为最终显示的像素点。</li>
-<li>***Early-Z**：一种提前深度测试的技术，目的是减少进入片段着色阶段的片段，优化性能。但需要注意，Early-Z技术与Alpha测试会出现冲突，导致透明物体后的物体无法被正确渲染。</li>
+<li>
+<ul>
+<li><strong>Early-Z</strong> ：一种提前深度测试的技术，目的是减少进入片段着色阶段的片段，优化性能。但需要注意，Early-Z技术与Alpha测试会出现冲突，导致透明物体后的物体无法被正确渲染。</li>
+</ul>
+</li>
 </ul>
 <h5 id="7">7. 片段着色器<a class="headerlink" href="#7" title="Permanent link">&para;</a></h5>
 <ul>
@@ -2292,15 +2298,15 @@
 </ul>
 <h5 id="8">8. 测试混合<a class="headerlink" href="#8" title="Permanent link">&para;</a></h5>
 <ul>
-<li><strong>裁剪测试</strong>：程序员可以指定一个裁剪框，只有在裁剪框内的片元会被绘制，常在视口比屏幕小时被使用。</li>
-<li><strong>Alpha测试</strong>：根据物体的透明度判断是否渲染。程序员可以设置的不透明度阈值，只有不透明度超过阈值的片元会被绘制，可支持全透明物体的剔除（<a href="https://zhuanlan.zhihu.com/p/263566318">详情</a>）。</li>
-<li><strong>模板测试</strong>：根据物体的位置范围判断是否渲染。程序员可以指定一个模板，只有位于这个模板中的图元片段，才会被渲染出来。</li>
-<li><strong>深度测试</strong>：根据物体的深度判断是否渲染。图形管线会先对每一个位置的像素存储一个深度值，称为深度缓冲（z-buffer），代表了该像素点在3D世界中离相机最近物体的深度值。于是在计算每一个物体的像素值的时候，都会将它的深度值和缓冲器当中的深度值进行比较，如果这个深度值小于缓冲器中的深度值，就更新深度缓冲和颜色缓冲的值，否则就丢弃。</li>
-<li><strong>Alpha混合</strong>：Alpha混合可以根据片段的alpha值进行混合，用来产生半透明的效果。值得注意的是，半透明物体的绘制需要遵循<a href="https://en.wikipedia.org/wiki/Painter%27s_algorithm">画家算法(painter Algorithm)</a>由远及近进行绘制，因为半透明的混合跟物体的顺序有严格的对应关系，一般会使用<a href="https://en.wikipedia.org/wiki/Order-independent_transparency">顺序无关的半透明渲染技术(Order-independent transparency，OIT)</a>。</li>
-<li><strong>抖动（Dither）</strong>：在色彩深度有限的情况下，通过使用随机数或者添加一个特定的抖动矩阵来决定相邻像素之间的颜色过渡，以模拟出更多的颜色深度的方法。抖动处理可以使图像看起来更加平滑，颜色过渡更加自然，提高图像的质量和美观度。抖动处理主要应用于颜色分量较少或系统显示器显示颜色深度有限的情况下。</li>
+<li><strong>裁剪测试</strong> ：程序员可以指定一个裁剪框，只有在裁剪框内的片元会被绘制，常在视口比屏幕小时被使用。</li>
+<li><strong>Alpha测试</strong> ：根据物体的透明度判断是否渲染。程序员可以设置的不透明度阈值，只有不透明度超过阈值的片元会被绘制，可支持全透明物体的剔除（<a href="https://zhuanlan.zhihu.com/p/263566318">详情</a>）。</li>
+<li><strong>模板测试</strong> ：根据物体的位置范围判断是否渲染。程序员可以指定一个模板，只有位于这个模板中的图元片段，才会被渲染出来。</li>
+<li><strong>深度测试</strong> ：根据物体的深度判断是否渲染。图形管线会先对每一个位置的像素存储一个深度值，称为深度缓冲（z-buffer），代表了该像素点在3D世界中离相机最近物体的深度值。于是在计算每一个物体的像素值的时候，都会将它的深度值和缓冲器当中的深度值进行比较，如果这个深度值小于缓冲器中的深度值，就更新深度缓冲和颜色缓冲的值，否则就丢弃。</li>
+<li><strong>Alpha混合</strong> ：Alpha混合可以根据片段的alpha值进行混合，用来产生半透明的效果。值得注意的是，半透明物体的绘制需要遵循<a href="https://en.wikipedia.org/wiki/Painter%27s_algorithm">画家算法(painter Algorithm)</a>由远及近进行绘制，因为半透明的混合跟物体的顺序有严格的对应关系，一般会使用<a href="https://en.wikipedia.org/wiki/Order-independent_transparency">顺序无关的半透明渲染技术(Order-independent transparency，OIT)</a>。</li>
+<li><strong>抖动（Dither）</strong> ：在色彩深度有限的情况下，通过使用随机数或者添加一个特定的抖动矩阵来决定相邻像素之间的颜色过渡，以模拟出更多的颜色深度的方法。抖动处理可以使图像看起来更加平滑，颜色过渡更加自然，提高图像的质量和美观度。抖动处理主要应用于颜色分量较少或系统显示器显示颜色深度有限的情况下。</li>
 </ul>
 <h4 id="rtr4">基本流程（RTR4）<a class="headerlink" href="#rtr4" title="Permanent link">&para;</a></h4>
-<p>图形渲染管线实际上指的是一堆原始图形数据途经一个输送管道，期间经过各种变化处理最终出现在屏幕的过程，在概念上可以将图形渲染管线分为四个阶段：**应用程序**阶段、**几何**阶段、**光栅化**阶段和**像素处理**阶段。</p>
+<p>图形渲染管线实际上指的是一堆原始图形数据途经一个输送管道，期间经过各种变化处理最终出现在屏幕的过程，在概念上可以将图形渲染管线分为四个阶段： <strong>应用程序</strong> 阶段、 <strong>几何</strong> 阶段、 <strong>光栅化</strong> 阶段和 <strong>像素处理</strong> 阶段。</p>
 <p><img alt="img" src="https://pic3.zhimg.com/80/v2-dfc730fe237cd1671ac7674bcea670ea_720w.webp" /></p>
 <ol>
 <li>应用程序阶段（Application）：通常是在CPU端于软件层面上进行处理，包括碰撞检测、动画物理模拟、空间加速算法以及视锥体剔除等任务，最后将数据送到渲染管线中。</li>
@@ -2314,29 +2320,29 @@
 </blockquote>
 <p>坐标变化过程如下图所示：</p>
 <p><img alt="img" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202304141428051.webp" /></p>
-<p>其中特别要强调的，**view矩阵**和**projection矩阵的推导**都是面试中十分常见的问题，需要掌握。</p>
+<p>其中特别要强调的， <strong>view矩阵</strong> 和 <strong>projection矩阵的推导</strong> 都是面试中十分常见的问题，需要掌握。</p>
 <h5 id="-">世界坐标系 -&gt; 相机坐标系<a class="headerlink" href="#-" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
 <p>相机坐标系是以相机的光心为原点，以相机的朝向（lookat）、向上方向（up）、向右方向（right）为基向量形成的三维直角坐标系。值得注意的是，一般在规定坐标系为左手或右手系的情况下，只需要知道三个基向量中的两个即可通过叉乘得到第三个基向量。</p>
 </li>
 <li>
-<p>视图矩阵推导：可以先计算将光心平移到原点的平移矩阵 <span class="arithmatex">\(T_{view}\)</span>，再计算旋转三个基向量到与坐标轴对其的旋转矩阵 <span class="arithmatex">\(R_{view}\)</span>，两者相乘可得视图矩阵。
-  $$
-  M_{view}=R_{view}\cdot T_{view}=\left[\begin{array}{cccc}
-  x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \
-   x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \
-  x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \
-  0 &amp; 0 &amp; 0 &amp; 1
-  \end{array}\right] \cdot \left[\begin{array}{cccc}
-  1 &amp; 0 &amp; 0 &amp; -x_{e} \
-  0 &amp; 1 &amp; 0 &amp; -y_{e} \
-  0 &amp; 0 &amp; 1 &amp; -z_{e} \
-  0 &amp; 0 &amp; 0 &amp; 1
-  \end{array}\right]
-  $$</p>
+<p>视图矩阵推导：可以先计算将光心平移到原点的平移矩阵 <span class="arithmatex">\(T_{view}\)</span>，再计算旋转三个基向量到与坐标轴对其的旋转矩阵 <span class="arithmatex">\(R_{view}\)</span>，两者相乘可得视图矩阵。</p>
 </li>
 </ul>
+<div class="arithmatex">\[
+  M_{view}=R_{view}\cdot T_{view}=\left[\begin{array}{cccc}
+  x_{\hat{g} \times \hat{t}} &amp; y_{\hat{g} \times \hat{t}}  &amp; z_{\hat{g} \times \hat{t}}  &amp; 0 \\
+   x_{\hat{t}}  &amp; y_{\hat{t}} &amp;  z_{\hat{t}} &amp; 0 \\
+  x_{-\hat{g} }&amp; y_{-\hat{g} } &amp; z_{-\hat{g} } &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right] \cdot \left[\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; -x_{e} \\
+  0 &amp; 1 &amp; 0 &amp; -y_{e} \\
+  0 &amp; 0 &amp; 1 &amp; -z_{e} \\
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}\right]
+  \]</div>
 <p>注意，此例将朝向转换到z轴负方向，向上方向转换到y轴正方向，两者叉积转换到x轴正方向。</p>
 <h5 id="-_1">相机坐标系 -&gt; 裁剪坐标系<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h5>
 <ul>
@@ -2347,14 +2353,14 @@
 <p>投影矩阵推导：此处略，详情见我的<a href="https://fujiw.gitee.io/2023/03/11/work/「计算机图形学」矩阵变换推导/">博客</a>。</p>
 </li>
 </ul>
-<p>$$
+<div class="arithmatex">\[
   M_{persp}=\left[\begin{array}{cccc}
-  \frac{-1}{aspect\cdot \tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 &amp; 0 \
-  0 &amp; \frac{-1}{\tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 \
-  0 &amp; 0 &amp; \frac{-(near+far)}{far-near} &amp; \frac{-2\cdot near\cdot far}{far-near} \
+  \frac{-1}{aspect\cdot \tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; \frac{-1}{\tan{\frac{fovY}{2}}} &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; \frac{-(near+far)}{far-near} &amp; \frac{-2\cdot near\cdot far}{far-near} \\
   0 &amp; 0 &amp; 1 &amp; 0
   \end{array}\right]
-  $$</p>
+  \]</div>
 <h3 id="_7">纹理映射<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <h4 id="_8">切线空间<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <blockquote>
@@ -2383,19 +2389,19 @@
 <p>C++ 程序在运行时也会按照不同的功能划分不同的段，C++程序使用的内存分区一般包括：栈、堆、全局/静态存储区、常量存储区、代码区。</p>
 <ul>
 <li>
-<p><strong>栈</strong>：目前绝大部分 CPU 体系都是基于栈来运行程序，栈中主要存放函数的局部变量、函数参数、返回地址等，栈空间一般由操作系统进行默认分配或者程序指定分配，栈空间在进程生存周期一直都存在，当进程退出时，操作系统才会对栈空间进行回收。</p>
+<p><strong>栈</strong> ：目前绝大部分 CPU 体系都是基于栈来运行程序，栈中主要存放函数的局部变量、函数参数、返回地址等，栈空间一般由操作系统进行默认分配或者程序指定分配，栈空间在进程生存周期一直都存在，当进程退出时，操作系统才会对栈空间进行回收。</p>
 </li>
 <li>
-<p><strong>堆</strong>：动态申请的内存空间，就是由 malloc 函数或者 new 函数分配的内存块，由程序控制它的分配和释放，可以在程序运行周期内随时进行申请和释放，如果进程结束后还没有释放，操作系统会自动回收。</p>
+<p><strong>堆</strong> ：动态申请的内存空间，就是由 malloc 函数或者 new 函数分配的内存块，由程序控制它的分配和释放，可以在程序运行周期内随时进行申请和释放，如果进程结束后还没有释放，操作系统会自动回收。</p>
 </li>
 <li>
-<p><strong>全局区/静态存储区</strong>：存放全局变量和静态变量，程序运行结束操作系统自动释放。</p>
+<p><strong>全局区/静态存储区</strong> ：存放全局变量和静态变量，程序运行结束操作系统自动释放。</p>
 </li>
 <li>
-<p><strong>常量存储区</strong>：存放的是常量，不允许修改，程序运行结束自动释放。</p>
+<p><strong>常量存储区</strong> ：存放的是常量，不允许修改，程序运行结束自动释放。</p>
 </li>
 <li>
-<p><strong>代码区</strong>：存放代码，不允许修改，但可以执行。编译后的二进制文件存放在这里。</p>
+<p><strong>代码区</strong> ：存放代码，不允许修改，但可以执行。编译后的二进制文件存放在这里。</p>
 </li>
 </ul>
 <h3 id="c-11">C++ 11<a class="headerlink" href="#c-11" title="Permanent link">&para;</a></h3>
@@ -2403,33 +2409,28 @@
 <p>智能指针主要用于解决内存泄露的问题，它可以自动地释放内存空间。因为它本身是一个类，当函数结束的时候会调用析构函数，并由析构函数释放内存空间。智能指针分为共享指针(shared_ptr), 独占指针(unique_ptr)和弱指针(weak_ptr)：</p>
 <ul>
 <li>
-<p><strong>共享指针</strong>（shared_ptr）：资源可以被多个指针共享，使用计数机制表明资源被几个指针共享。通过 use_count() 查看资源的所有者的个数，可以通过 unique_ptr、weak_ptr 来构造，调用 release() 释放资源的所有权，计数减一，当计数减为 0 时，会自动释放内存空间，从而避免了内存泄漏。</p>
+<p><strong>共享指针</strong> （shared_ptr）：资源可以被多个指针共享，使用计数机制表明资源被几个指针共享。通过 use_count() 查看资源的所有者的个数，可以通过 unique_ptr、weak_ptr 来构造，调用 release() 释放资源的所有权，计数减一，当计数减为 0 时，会自动释放内存空间，从而避免了内存泄漏。</p>
 </li>
 <li>
-<p><strong>独占指针</strong>（unique_ptr）：独享所有权的智能指针，资源只能被一个指针占有，该指针不能拷贝构造和赋值。但可以进行移动构造和移动赋值构造（调用 move() 函数），即一个 unique_ptr 对象赋值给另一个 unique_ptr 对象，可以通过该方法进行赋值。</p>
+<p><strong>独占指针</strong> （unique_ptr）：独享所有权的智能指针，资源只能被一个指针占有，该指针不能拷贝构造和赋值。但可以进行移动构造和移动赋值构造（调用 move() 函数），即一个 unique_ptr 对象赋值给另一个 unique_ptr 对象，可以通过该方法进行赋值。</p>
 </li>
 <li>
-<p><strong>弱指针</strong>（weak_ptr）：指向 shared_ptr 指向的对象，能够解决由shared_ptr带来的循环引用问题。</p>
+<p><strong>弱指针</strong> （weak_ptr）：指向 shared_ptr 指向的对象，能够解决由shared_ptr带来的循环引用问题。</p>
 </li>
 </ul>
 <h4 id="c_1">C++的虚函数机制<a class="headerlink" href="#c_1" title="Permanent link">&para;</a></h4>
 <p>虚函数通过虚函数表来实现。虚函数的地址保存在虚函数表中，在类的对象所在的内存空间中，保存了指向虚函数表的指针（称为“虚表指针”），通过虚表指针可以找到类对应的虚函数表。虚函数表解决了基类和派生类的继承问题和类中成员函数的覆盖问题，当用基类的指针来操作一个派生类的时候，这张虚函数表就指明了实际应该调用的函数。</p>
 <ul>
-<li><strong>构造函数和析构函数能不能为虚函数？</strong></li>
-<li>构造函数一般不能定义为虚函数。如果构造函数为虚函数，则类在创建时需要通过虚函数表指针去找到构造函数，但没有构造函数无法创建类。</li>
+<li><strong>构造函数和析构函数能不能为虚函数？</strong> - 构造函数一般不能定义为虚函数。如果构造函数为虚函数，则类在创建时需要通过虚函数表指针去找到构造函数，但没有构造函数无法创建类。</li>
 <li>析构函数一般定义为虚函数。析构函数定义成虚函数是为了防止内存泄漏，因为当基类的指针或者引用指向或绑定到派生类的对象时，如果未将基类的析构函数定义成虚函数，会调用基类的析构函数，那么只能将基类的成员所占的空间释放掉，派生类中特有的就会无法释放内存空间导致内存泄漏。</li>
-<li><strong>虚函数表存放在哪个内存区？</strong></li>
 <li>
-<p>虚函数表位于只读数据段（.rodata），即C++内存模型中的常量区；而虚函数则位于代码段（.text），也就是代码区。</p>
+<p><strong>虚函数表存放在哪个内存区？</strong> - 虚函数表位于只读数据段（.rodata），即C++内存模型中的常量区；而虚函数则位于代码段（.text），也就是代码区。</p>
 </li>
 <li>
-<p><strong>struct（int char）大小，加一个静态变量之后呢？加一个虚函数之后呢？</strong></p>
+<p><strong>struct（int char）大小，加一个静态变量之后呢？加一个虚函数之后呢？</strong> - 8字节（内存对齐），还是8字节（静态变量在全局/静态区），12字节（多了一个虚函数表指针）。</p>
 </li>
-<li>8字节（内存对齐），还是8字节（静态变量在全局/静态区），12字节（多了一个虚函数表指针）。</li>
-<li><strong>创建10个实例有几个虚函数表？</strong></li>
-<li>1个，虚函数表数量与实例的对象数量无关。</li>
-<li><strong>哪些不能是虚函数？</strong></li>
-<li>构造、内联、静态成员、lamda函数</li>
+<li><strong>创建10个实例有几个虚函数表？</strong> - 1个，虚函数表数量与实例的对象数量无关。</li>
+<li><strong>哪些不能是虚函数？</strong> - 构造、内联、静态成员、lamda函数</li>
 </ul>
 <h4 id="_17">相关问题<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <h5 id="1-c11">1. C++11 新特性<a class="headerlink" href="#1-c11" title="Permanent link">&para;</a></h5>

@@ -1784,14 +1784,7 @@
     TODO
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    训练记录
-  </a>
-  
-    <nav class="md-nav" aria-label="训练记录">
+    <nav class="md-nav" aria-label="TODO">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1814,7 +1807,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     实验记录表
   </a>
   
@@ -1904,7 +1897,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     损失函数的选择
   </a>
   
@@ -2018,13 +2011,11 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <font color="red">顺便做一下LSTD的优化实验</font></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 在可微体渲染的部分，实验使用 cone tracing 是否有利于精度</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 下载 futurehouse 数据集</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>先把log和可视化加入，验证是否可以正常训练</strong></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 切换成大网络进行训练</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>先把log和可视化加入，验证是否可以正常训练</strong> - [x] 切换成大网络进行训练</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 切换数据集的图像尺寸（注意 camera pose 也要变）</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 现在 camera pos 还有一些问题</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>再把新数据集进行处理，验证是否可以正常训练</strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>再把新数据集进行处理，验证是否可以正常训练</strong> ## 训练记录</li>
 </ul>
-<h2 id="_2">训练记录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[2023-06-12 22:25:39,989 - INFO - [log dir] .log/hypersim/hypersim_e1000_b1_od6_ofd4_1686579939.9805655
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[2023-06-12 22:25:39,989 - INFO - [log txt] .log/hypersim/hypersim_e1000_b1_od6_ofd4_1686579939.9805655/log.txt
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[2023-06-12 22:25:39,989 - INFO - [see log] tensorboard --logdir=.log/hypersim/hypersim_e1000_b1_od6_ofd4_1686579939.9805655
@@ -2049,7 +2040,7 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>2023-06-14 11:35:56,367 - INFO - [see log]  tensorboard --logdir=.log/hypersim/hypersim_e1000_b1_od7_ofd4_1686713756.3502996
 </code></pre></div>
 <p><img alt="image-20230614121903389" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306141219149.png" /></p>
-<h2 id="_3">实验记录表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">实验记录表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2452,7 +2443,7 @@
 <blockquote>
 <p>2023-06-21 11:05:05,839 - INFO - [log dir]  .log/hypersim_ai_001/hypersim_ai_001_e1000_b1_od7_ofd4_1687316705.65941</p>
 </blockquote>
-<h2 id="_4">损失函数的选择<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">损失函数的选择<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h4 id="mae-vs-mse">MAE V.S. MSE<a class="headerlink" href="#mae-vs-mse" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>MSE loss可以有效地约束RGB值的范围，但是对边缘和纹理的保留效果并不理想。</p>

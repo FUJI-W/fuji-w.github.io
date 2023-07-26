@@ -1081,11 +1081,11 @@ G --&gt; | render | I("environment map ")
 </tbody>
 </table>
 <h4 id="_13">光线与包围盒求交<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
-<p>这里使用**轴对称包围盒（AABB，Axis-Aligned Bounding Box）**方法来加速光线与物体求交。轴对称包围盒的特点是三对平板分别与三个坐标轴平行，这是为了简化中光线与平面交点对应的 <span class="arithmatex">\(t\)</span> 值的计算（如上一节所示）。</p>
+<p>这里使用 <strong>轴对称包围盒（AABB，Axis-Aligned Bounding Box）</strong> 方法来加速光线与物体求交。轴对称包围盒的特点是三对平板分别与三个坐标轴平行，这是为了简化中光线与平面交点对应的 <span class="arithmatex">\(t\)</span> 值的计算（如上一节所示）。</p>
 <p>我们可以把包围盒看成由三对平板（slabs）相交的区域，如下图所示，以二维情况下的求交问题为例。观察可得：</p>
 <ul>
-<li>当光线**进入所有的平板**时，可判定光线**进入**了包围盒； </li>
-<li>当光线**离开任意的平板**时，可判定光线**离开**了包围盒。</li>
+<li>当光线 <strong>进入所有的平板</strong> 时，可判定光线 <strong>进入</strong> 了包围盒； </li>
+<li>当光线 <strong>离开任意的平板</strong> 时，可判定光线 <strong>离开</strong> 了包围盒。</li>
 </ul>
 <p>因此，我们可以通过下面的步骤来判断光线是否与包围盒相交：</p>
 <ul>

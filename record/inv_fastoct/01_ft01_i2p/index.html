@@ -1915,37 +1915,37 @@
 <blockquote>
 <p>相机内参（intrinsics）是指相机的光学参数，包括焦距、像素大小、主点等。它们决定了图像在相机成像过程中的投影关系和畸变情况。相机内参通常通过标定获取，可以用于校正图像畸变和计算三维空间中的物体位置。</p>
 </blockquote>
-<p>我们可以**利用相机内参矩阵和深度图将点由 <u>屏幕坐标系</u> 转换到 <u>相机坐标系</u>**。具体推导如下。</p>
-<p>由上一节，我们知道 <u>相机坐标系</u> 中的点 <span class="arithmatex">\(P\)</span> 投影到 <u>胶片坐标系</u>，再转换到 <u>屏幕坐标系</u> 共经历了两次矩阵变换：
-$$
-\begin{pmatrix}x' \ y' \ 1\end{pmatrix}=\frac{1}{z}\begin{pmatrix}f &amp; 0 &amp; 0 \ 0 &amp; f &amp; 0 \ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \ y \ z\end{pmatrix} ,\quad \begin{pmatrix}u \ v \ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \ 0 &amp; \beta &amp; t_y\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \ y' \ 1\end{pmatrix}
-$$</p>
-<p>合并两次矩阵变换，可以得到相机坐标系与屏幕坐标系的转换关系：
-$$
-\begin{pmatrix}u \ v \ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \ 0 &amp; \beta &amp; t_y\ 0 &amp; 0 &amp; 1\end{pmatrix}\frac{1}{z}\begin{pmatrix}f &amp; 0 &amp; 0 \ 0 &amp; f &amp; 0 \ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \ y \ z\end{pmatrix}
+<p>我们可以 <strong>利用相机内参矩阵和深度图将点由 <u>屏幕坐标系</u> 转换到 <u>相机坐标系</u></strong> 。具体推导如下。</p>
+<p>由上一节，我们知道 <u>相机坐标系</u> 中的点 <span class="arithmatex">\(P\)</span> 投影到 <u>胶片坐标系</u>，再转换到 <u>屏幕坐标系</u> 共经历了两次矩阵变换：</p>
+<div class="arithmatex">\[
+\begin{pmatrix}x' \\ y' \\ 1\end{pmatrix}=\frac{1}{z}\begin{pmatrix}f &amp; 0 &amp; 0 \\ 0 &amp; f &amp; 0 \\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \\ y \\ z\end{pmatrix} ,\quad \begin{pmatrix}u \\ v \\ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \\ 0 &amp; \beta &amp; t_y\\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \\ y' \\ 1\end{pmatrix}
+\]</div>
+<p>合并两次矩阵变换，可以得到相机坐标系与屏幕坐标系的转换关系：</p>
+<div class="arithmatex">\[
+\begin{pmatrix}u \\ v \\ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \\ 0 &amp; \beta &amp; t_y\\ 0 &amp; 0 &amp; 1\end{pmatrix}\frac{1}{z}\begin{pmatrix}f &amp; 0 &amp; 0 \\ 0 &amp; f &amp; 0 \\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \\ y \\ z\end{pmatrix}
 \quad \Rightarrow \quad 
-\begin{pmatrix}u \ v \ 1\end{pmatrix}=\frac{1}{z}\begin{pmatrix}\alpha f&amp; 0 &amp; t_x \ 0 &amp; \beta f&amp; t_y\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \ y \ z\end{pmatrix}
+\begin{pmatrix}u \\ v \\ 1\end{pmatrix}=\frac{1}{z}\begin{pmatrix}\alpha f&amp; 0 &amp; t_x \\ 0 &amp; \beta f&amp; t_y\\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \\ y \\ z\end{pmatrix}
  \quad \Rightarrow \quad 
-z \begin{pmatrix}u \ v \ 1\end{pmatrix}=\mathbf{K}\begin{pmatrix}x \ y \ z\end{pmatrix}
-$$
-上式中的 <span class="arithmatex">\(\mathbf{K}\)</span> 即为相机内参矩阵。因此，<strong>在已知深度图时，可以通过下式得到相机坐标系下的点云</strong>：
-$$
-\begin{pmatrix}x \ y \ z\end{pmatrix}=\mathbf{K^{-1}}\begin{pmatrix}u \ v \ 1\end{pmatrix}\cdot z
+z \begin{pmatrix}u \\ v \\ 1\end{pmatrix}=\mathbf{K}\begin{pmatrix}x \\ y \\ z\end{pmatrix}
+\]</div>
+<p>上式中的 <span class="arithmatex">\(\mathbf{K}\)</span> 即为相机内参矩阵。因此， <strong>在已知深度图时，可以通过下式得到相机坐标系下的点云</strong> ：</p>
+<div class="arithmatex">\[
+\begin{pmatrix}x \\ y \\ z\end{pmatrix}=\mathbf{K^{-1}}\begin{pmatrix}u \\ v \\ 1\end{pmatrix}\cdot z
 \quad\Rightarrow\quad
 \textcolor{blue}{
-\begin{pmatrix}x \ y \ z\end{pmatrix}=\mathbf{K^{-1}}\begin{pmatrix}u \ v \ 1\end{pmatrix}\cdot \mathbf{depth}_{u,v}}
-$$</p>
+\begin{pmatrix}x \\ y \\ z\end{pmatrix}=\mathbf{K^{-1}}\begin{pmatrix}u \\ v \\ 1\end{pmatrix}\cdot \mathbf{depth}_{u,v}}
+\]</div>
 <h4 id="_3">相机外参矩阵<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>相机外参（extrinsics）是指相机在世界坐标系下的位置和姿态，通常包括相机的平移向量和旋转矩阵。它们描述了相机拍摄图像时相对于物体的位置和方向关系。相机外参可以通过计算机视觉中的标定方法获取，或者通过传感器的数据融合进行估计。</p>
 </blockquote>
-<p>我们可以**利用相机外参矩阵将点由 <u>相机坐标系</u> 转换到 <u>世界坐标系</u>**。相机的位姿由旋转矩阵 <span class="arithmatex">\(\mathbf{R}\)</span> 和 平移向量 <span class="arithmatex">\(\mathbf{t}\)</span> 来描述，有
-$$
-\mathbf{camera pose}=\begin{pmatrix}\mathbf{R}|\mathbf{t}\end{pmatrix}
+<p>我们可以 <strong>利用相机外参矩阵将点由 <u>相机坐标系</u> 转换到 <u>世界坐标系</u></strong> 。相机的位姿由旋转矩阵 <span class="arithmatex">\(\mathbf{R}\)</span> 和 平移向量 <span class="arithmatex">\(\mathbf{t}\)</span> 来描述，有</p>
+<div class="arithmatex">\[
+\mathbf{camera\ pose}=\begin{pmatrix}\mathbf{R}|\mathbf{t}\end{pmatrix}
 \quad\Rightarrow\quad
 \textcolor{blue}{
-\begin{pmatrix}x_w \ y_w \ z_w\end{pmatrix}=\mathbf{R}\begin{pmatrix}x \ y \ z\end{pmatrix} + \mathbf{t}}
-$$</p>
+\begin{pmatrix}x_w \\ y_w \\ z_w\end{pmatrix}=\mathbf{R}\begin{pmatrix}x \\ y \\ z\end{pmatrix} + \mathbf{t}}
+\]</div>
 
 
 

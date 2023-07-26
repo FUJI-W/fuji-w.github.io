@@ -2110,30 +2110,30 @@
 <h2 id="_1">概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="key-ideas">Key Ideas<a class="headerlink" href="#key-ideas" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>使用八叉树来表示点云和体素网格</strong>。</li>
+<li><strong>使用八叉树来表示点云和体素网格</strong> 。</li>
 <li>根据占有率对空间做自适应划分。</li>
-<li><strong>通过图网络在对偶八叉树图上做特征学习</strong>。</li>
+<li><strong>通过图网络在对偶八叉树图上做特征学习</strong> 。</li>
 <li>原有的三维卷积方法是对同一分辨率的特征做卷积，而八叉树中每一个特征与其领域的特征分辨率有可能是不同的，因此引入图网络进行特征学习。</li>
 </ul>
 <p><img alt="image-20230320163352832" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201633890.png" /></p>
 <h3 id="dual-octree-graph">Dual Octree Graph<a class="headerlink" href="#dual-octree-graph" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>八叉树</strong>：给定一个3D形状，可以通过对其占用空间与八叉树节点相交的节点进行递归细分来构建八叉树，直到达到指定的最大树深度。八叉树在接近表面处分配更细的体素，而在表面远离处分配更粗的体素。八叉树的叶节点形成了3D体积的完整分区。</li>
-<li><strong>对偶八叉树图</strong>：八叉树的对偶八叉树图是通过**连接具有不同分辨率的所有<u>面相邻</u>(face-adjacent)的八叉树叶节点形成的**。</li>
+<li><strong>八叉树</strong> ：给定一个3D形状，可以通过对其占用空间与八叉树节点相交的节点进行递归细分来构建八叉树，直到达到指定的最大树深度。八叉树在接近表面处分配更细的体素，而在表面远离处分配更粗的体素。八叉树的叶节点形成了3D体积的完整分区。</li>
+<li><strong>对偶八叉树图</strong> ：八叉树的对偶八叉树图是通过 <strong>连接具有不同分辨率的所有<u>面相邻</u>(face-adjacent)的八叉树叶节点形成的</strong> 。</li>
 </ul>
 <p><img alt="image-20230320164017584" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201640635.png" /></p>
 <h3 id="graph-convolution-on-dual-octrees">Graph Convolution on Dual Octrees<a class="headerlink" href="#graph-convolution-on-dual-octrees" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Message passing 图卷积</strong>：如下图所示，对任意一个点 <span class="arithmatex">\(i\)</span>，取其领域的所有点 <span class="arithmatex">\(N_{i}\)</span>，记点 <span class="arithmatex">\(i\)</span> 和点 <span class="arithmatex">\(j\)</span> 的偏差为 <span class="arithmatex">\(\Delta{p_{ij}}\)</span> ，定义权重函数 <span class="arithmatex">\(W(\cdot)\)</span>， <span class="arithmatex">\(F_{i}\)</span> 表示 <span class="arithmatex">\(i\)</span> 点的特征值，则 message passing 的过程可表示为 <span class="arithmatex">\(F_i=\sum_{j\in N_i}W(\Delta p_{ij})\times F_j\)</span> 。</li>
+<li><strong>Message passing 图卷积</strong> ：如下图所示，对任意一个点 <span class="arithmatex">\(i\)</span>，取其领域的所有点 <span class="arithmatex">\(N_{i}\)</span>，记点 <span class="arithmatex">\(i\)</span> 和点 <span class="arithmatex">\(j\)</span> 的偏差为 <span class="arithmatex">\(\Delta{p_{ij}}\)</span> ，定义权重函数 <span class="arithmatex">\(W(\cdot)\)</span>， <span class="arithmatex">\(F_{i}\)</span> 表示 <span class="arithmatex">\(i\)</span> 点的特征值，则 message passing 的过程可表示为 <span class="arithmatex">\(F_i=\sum_{j\in N_i}W(\Delta p_{ij})\times F_j\)</span> 。</li>
 </ul>
 <p><img alt="image-20230320170125895" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201701930.png" /></p>
 <ul>
-<li><strong>本文提出的图卷积</strong>：对偶八叉树图中各结点的位置关系 <span class="arithmatex">\(\Delta p_{ij}\)</span> 只有有限个值，即权重函数 <span class="arithmatex">\(W(\cdot)\)</span> 的定义域和值域都是有限的，因此，作者直接将权重函数 <span class="arithmatex">\(W(\Delta p_{ij})\)</span> 定义为一个矩阵 <span class="arithmatex">\(W\)</span>。如下图所示，将 <span class="arithmatex">\(\Delta p_{ij}\)</span> 的取值简化为 上下左右前后与自身 七个取值。</li>
+<li><strong>本文提出的图卷积</strong> ：对偶八叉树图中各结点的位置关系 <span class="arithmatex">\(\Delta p_{ij}\)</span> 只有有限个值，即权重函数 <span class="arithmatex">\(W(\cdot)\)</span> 的定义域和值域都是有限的，因此，作者直接将权重函数 <span class="arithmatex">\(W(\Delta p_{ij})\)</span> 定义为一个矩阵 <span class="arithmatex">\(W\)</span>。如下图所示，将 <span class="arithmatex">\(\Delta p_{ij}\)</span> 的取值简化为 上下左右前后与自身 七个取值。</li>
 </ul>
 <p><img alt="image-20230320173447867" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201734906.png" /></p>
 <h3 id="multiscale-features-in-convolutions">Multiscale Features in Convolutions<a class="headerlink" href="#multiscale-features-in-convolutions" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>本文提出的图卷积结构的优越性</strong>：<strong><u>多尺度</u>的特性</strong>。一般的三维稀疏卷积，每次卷积操作都是对同一分辨率的特征做运算，如O-CNN；而Duel O-GNN每一次运算时不同分辨率的特征都参与了运算，扩大了感受野，具有更强的全局性。</li>
+<li><strong>本文提出的图卷积结构的优越性</strong> ： <strong><u>多尺度</u>的特性</strong> 。一般的三维稀疏卷积，每次卷积操作都是对同一分辨率的特征做运算，如O-CNN；而Duel O-GNN每一次运算时不同分辨率的特征都参与了运算，扩大了感受野，具有更强的全局性。</li>
 </ul>
 <p><img alt="image-20230320174521172" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201745216.png" /></p>
 <h2 id="_2">详解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -2157,10 +2157,9 @@
 <p>部分算法仍然没有设计有效的编码网络，对于新场景需要重新优化网络参数。</p>
 </li>
 <li>
-<p>体素场的编码网络仍然是基于 Full-Voxel-based CNNs 或 Sparse-Voxel-based CNNs。</p>
+<p>体素场的编码网络仍然是基于 Full-Voxel-based CNNs 或 Sparse-Voxel-based CNNs。 <strong>论文的关键思想</strong> 是使用自适应八叉树来表示点云和体积场，并在对偶八叉树图上用图网络学习特征。相比Full-Voxel方法效率有所提高，相比Sparse-Voxel方法可以保证全局特征聚合与连续的输出。</p>
 </li>
 </ul>
-<p><strong>论文的关键思想</strong> 是使用自适应八叉树来表示点云和体积场，并在对偶八叉树图上用图网络学习特征。相比Full-Voxel方法效率有所提高，相比Sparse-Voxel方法可以保证全局特征聚合与连续的输出。</p>
 <h3 id="_4">方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>论文提出的模型的输入为点云数据，首先基于点云数据划分八叉树，然后连接相邻的叶子节点得到对偶八叉树图（Dual Octree Graph），经过编码-解码网络，预测各叶子节点的特征，最后经过Neural MPU的方法插值得到任一查询点的场值。论文的核心创新点，是提出了基于对偶八叉树的图卷积算子，以及提出了Neural MPU的表示方法。可以高效地学习全局特征，保证输出的空间连续性。</p>
 <p><img alt="image.png" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201738409.png" /></p>
@@ -2198,7 +2197,7 @@ F_i=\sum_{j \in \mathcal{N}_i} W_{I\left(\Delta p_{i j}\right)} \times\left[F_j\
 <h4 id="neural-mpu">Neural MPU<a class="headerlink" href="#neural-mpu" title="Permanent link">&para;</a></h4>
 <p>上述的方法可以提取每个八叉树节点的特征，但最终目标是获得逐点（point-wise）的预测。因此，作者引入 multi-level partition of unity（MPU）插值方法。</p>
 <p><img alt="image.png" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202303201740140.png" /></p>
-<p>具体地，给定提取的节点特征集合 <span class="arithmatex">\(F^d=\{F_i\}\)</span> ，对于**每个**八叉树叶子节点，论文定义了 MLP <span class="arithmatex">\(\Phi(x,F_i)\)</span> ，其输入为查询点的坐标 <span class="arithmatex">\(x\)</span> 和节点特征 <span class="arithmatex">\(F_i\)</span> ，输出为局部函数值；定义了局部的融合权重函数 <span class="arithmatex">\(w_i(x)\)</span> 和置信度 <span class="arithmatex">\(c_i\)</span> 。因此，MPU的公式表达如下。</p>
+<p>具体地，给定提取的节点特征集合 <span class="arithmatex">\(F^d=\{F_i\}\)</span> ，对于 <strong>每个</strong> 八叉树叶子节点，论文定义了 MLP <span class="arithmatex">\(\Phi(x,F_i)\)</span> ，其输入为查询点的坐标 <span class="arithmatex">\(x\)</span> 和节点特征 <span class="arithmatex">\(F_i\)</span> ，输出为局部函数值；定义了局部的融合权重函数 <span class="arithmatex">\(w_i(x)\)</span> 和置信度 <span class="arithmatex">\(c_i\)</span> 。因此，MPU的公式表达如下。</p>
 <div class="arithmatex">\[
 F(x)=\frac{\sum_i c_i \cdot w_i(x) \cdot \Phi\left(x, F_i\right)}{\sum_i c_i \cdot w_i(x)}
 \]</div>

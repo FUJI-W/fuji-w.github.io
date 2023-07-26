@@ -1925,28 +1925,28 @@
 
 <h3 id="_1">坐标系规定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h4 id="film-space-coordinates">film space coordinates<a class="headerlink" href="#film-space-coordinates" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20230610175724563" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306101757066.png" />
-$$
+<p><img alt="image-20230610175724563" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306101757066.png" /></p>
+<div class="arithmatex">\[
 \frac{x'}{x}=\frac{y'}{y}=\frac{f}{z} \quad \Rightarrow \quad 
-\begin{pmatrix}x' \ y' \ 1\end{pmatrix}=\frac{1}{z}\begin{pmatrix}f &amp; 0 &amp; 0 \ 0 &amp; f &amp; 0 \ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \ y \ z\end{pmatrix}
-$$</p>
+\begin{pmatrix}x' \\ y' \\ 1\end{pmatrix}=\frac{1}{z}\begin{pmatrix}f &amp; 0 &amp; 0 \\ 0 &amp; f &amp; 0 \\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x \\ y \\ z\end{pmatrix}
+\]</div>
 <h4 id="screen-space-coordinates">screen space coordinates<a class="headerlink" href="#screen-space-coordinates" title="Permanent link">&para;</a></h4>
 <h5 id="_2">一般模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<p><img alt="image-20230610182823013" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306101828101.png" />
-$$
-\begin{pmatrix}u \ v \ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \ 0 &amp; \beta &amp; t_y\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \ y' \ 1\end{pmatrix}
-$$</p>
+<p><img alt="image-20230610182823013" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306101828101.png" /></p>
+<div class="arithmatex">\[
+\begin{pmatrix}u \\ v \\ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \\ 0 &amp; \beta &amp; t_y\\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \\ y' \\ 1\end{pmatrix}
+\]</div>
 <h5 id="_3">渲染采用的具体模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
-<p><img alt="image-20230610191515981" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306101915650.png" />
-$$
-\begin{pmatrix}u \ v \ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \ 0 &amp; \beta &amp; t_y\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \ y' \ 1\end{pmatrix},\quad\mathbf{where}  
+<p><img alt="image-20230610191515981" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306101915650.png" /></p>
+<div class="arithmatex">\[
+\begin{pmatrix}u \\ v \\ 1\end{pmatrix}=\begin{pmatrix}\alpha &amp; 0 &amp; t_x \\ 0 &amp; \beta &amp; t_y\\ 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \\ y' \\ 1\end{pmatrix},\quad\mathbf{where}\ \ 
 \begin{cases}
-\alpha=image_height/2/half_height\
-\beta=image_width/2/half_width\
-t_x=image_width/2\
-t_y=image_height/2
+\alpha=image\_height/2/half\_height\\
+\beta=image\_width/2/half\_width\\
+t_x=image\_width/2\\
+t_y=image\_height/2
 \end{cases}
-$$</p>
+\]</div>
 
 
 
