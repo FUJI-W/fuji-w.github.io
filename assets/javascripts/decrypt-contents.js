@@ -132,7 +132,8 @@ function decryptor_reaction(content_decrypted, password_input, fallback_used, se
         
         // continue to decrypt others parts
         
-        
+        let encrypted_something = {'md-sidebar__inner': ['div', 'class']};
+        decrypt_somethings(password_input.value, encrypted_something);
     } else {
         // remove item on sessionStorage/localStorage if decryption process fail (Invalid item)
         if (!fallback_used || set_global) {
