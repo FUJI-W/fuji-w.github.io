@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#octree-to-graph" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -496,7 +496,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../job/offer_harvester/" class="md-tabs__link">
+        <a href="../../../work/offer_harvester/" class="md-tabs__link">
           
   
     
@@ -1079,7 +1079,7 @@
         
   
   <span class="md-ellipsis">
-    [Protected] 深度学习
+    深度学习
   </span>
   
 
@@ -2689,11 +2689,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#octree-to-graph" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Octree to Graph
+      可微渲染器代码实现
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="可微渲染器代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      可能的问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3398,7 +3413,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../job/offer_harvester/" class="md-nav__link ">
+            <a href="../../../work/offer_harvester/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3431,7 +3446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/02_information/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/02_information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3452,7 +3467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/03_share/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/03_share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3473,7 +3488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/01_timeline/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/01_timeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3494,7 +3509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/04_record/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/04_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3515,7 +3530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/05_knowledge/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/05_knowledge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3796,11 +3811,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#octree-to-graph" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Octree to Graph
+      可微渲染器代码实现
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="可微渲染器代码实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      可能的问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3821,7 +3851,13 @@
 
   <h1>可微体渲染实验</h1>
 
-<h3 id="octree-to-graph">Octree to Graph<a class="headerlink" href="#octree-to-graph" title="Permanent link">&para;</a></h3>
+<h3 id="_1">可微渲染器代码实现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">可能的问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>如果严格按照前文推导的公式进行梯度的计算，可能会出现梯度计算结果非常大的情况。</li>
+<li>这是因为，一方面，初始状态下与优化目标的距离较大，导致梯度值较大；另一方面，单个体素的梯度可能包含许多条光线的贡献。因此，需要通过调整学习率来调节优化，也可以对梯度进行映射或截断，比如对超过 <span class="arithmatex">\([-1, 1]\)</span> 的梯度进行截断，以保证较为稳定的学习。</li>
+<li>值得注意的是，taichi 内置的 <code>taichi.tools.imread()</code> 与 <code>taichi.tools.imwrite()</code> 函数是按照 <code>w,h,c</code> 的顺序存储的，与 cv2 和 plt （<code>h,w,c</code>） 都不同，转换关系为 <code>image(in taichi) = image.permute(1,0,2).flip(0)</code> 。  </li>
+</ul>
 
 
 

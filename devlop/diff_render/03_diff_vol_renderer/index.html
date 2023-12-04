@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#octree-to-graph" class="md-skip">
+        <a href="#nerf" class="md-skip">
           跳转至
         </a>
       
@@ -496,7 +496,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../job/offer_harvester/" class="md-tabs__link">
+        <a href="../../../work/offer_harvester/" class="md-tabs__link">
           
   
     
@@ -1079,7 +1079,7 @@
         
   
   <span class="md-ellipsis">
-    [Protected] 深度学习
+    深度学习
   </span>
   
 
@@ -2668,11 +2668,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#octree-to-graph" class="md-nav__link">
+  <a href="#nerf" class="md-nav__link">
     <span class="md-ellipsis">
-      Octree to Graph
+      NeRF渲染方程求导
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="NeRF渲染方程求导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于颜色强度的导数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于吸收系数的导数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3398,7 +3422,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../job/offer_harvester/" class="md-nav__link ">
+            <a href="../../../work/offer_harvester/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3431,7 +3455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/02_information/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/02_information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3452,7 +3476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/03_share/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/03_share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3473,7 +3497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/01_timeline/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/01_timeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3494,7 +3518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/04_record/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/04_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3515,7 +3539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/05_knowledge/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/05_knowledge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3796,11 +3820,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#octree-to-graph" class="md-nav__link">
+  <a href="#nerf" class="md-nav__link">
     <span class="md-ellipsis">
-      Octree to Graph
+      NeRF渲染方程求导
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="NeRF渲染方程求导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于颜色强度的导数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于吸收系数的导数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3821,7 +3869,59 @@
 
   <h1>可微体渲染</h1>
 
-<h3 id="octree-to-graph">Octree to Graph<a class="headerlink" href="#octree-to-graph" title="Permanent link">&para;</a></h3>
+<h3 id="nerf">NeRF渲染方程求导<a class="headerlink" href="#nerf" title="Permanent link">&para;</a></h3>
+<p>由前面的推导，我们得到了NeRF的渲染方程的离散表达：</p>
+<div class="arithmatex">\[
+L(\mathbf{x},\omega)=L(s)=\sum_{n=1}^{N}C_nT_n(1-e^{-\sigma_n\delta_n}),\quad T_n=e^{-\sum_{k=1}^{n-1}\sigma_k\delta_k}
+\]</div>
+<p>下面我们分别推导该渲染方程在采样点 <span class="arithmatex">\(t\)</span> 处的关于颜色强度与吸收系数的导数计算式。</p>
+<h4 id="_1">关于颜色强度的导数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\frac{\partial{L(\mathbf{x},\omega)}}{\partial{C_t}}
+=
+\frac{\partial(\sum_{n=1}^{N}C_nT_n(1-e^{-\sigma_n\delta_n}))}{\partial{C_t}}
+=T_t(1-e^{-\sigma_t\delta_t})
+\]</div>
+<h4 id="_2">关于吸收系数的导数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial{L(\mathbf{x},\omega)}}{\partial{\sigma_t}}
+&amp;=\frac{\partial{(\sum_{n=1}^{N}C_nT_n(1-e^{-\sigma_n\delta_n}))}}{\partial{\sigma_t}}\\
+&amp;=\sum_{n=t}^{N}C_n\frac{\partial{(T_n(1-e^{-\sigma_n\delta_n}))}}{\partial{\sigma_t}}\\
+&amp;=\sum_{n=t}^{N}C_nT_n\frac{\partial{(1-e^{-\sigma_n\delta_n})}}{\partial{\sigma_t}}
++\sum_{n=t}^{N}C_n\frac{\partial{T_n}}{\partial{\sigma_t}}(1-e^{-\sigma_n\delta_n})\\
+&amp;=C_tT_te^{-\sigma_t\delta_t}\delta_t
++\sum_{n=t+1}^{N}C_n\frac{\partial{T_n}}{\partial{\sigma_t}}(1-e^{-\sigma_n\delta_n})
+\end{aligned}
+\]</div>
+<p>进一步地：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial{T_n}}{\partial{\sigma_t}}
+&amp;=\frac{\partial{(e^{-\sum_{k=1}^{n-1}\sigma_k\delta_k}})}{\partial{\sigma_t}}\\
+&amp;=\frac{\partial{(e^{-\sum_{1}^{t-1}\sigma_k\delta_k}e^{-\sum_{t+1}^{n}\sigma_k\delta_k}}e^{-\sigma_t\delta_t})}{\partial{\sigma_t}}\\
+&amp;=\frac{\partial{(T_tT_{t+2\to n}e^{-\sigma_t\delta_t})}}{\partial{\sigma_t}}\\
+&amp;=-T_tT_{t+2\to n}e^{-\sigma_t\delta_t}\delta_t\\
+&amp;=-T_n\delta_t
+\end{aligned}
+\]</div>
+<p>代入到前式可得，渲染方程关于吸收系数的导数的表达式为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial{L(\mathbf{x},\omega)}}{\partial{\sigma_t}}
+&amp;=C_tT_te^{-\sigma_t\delta_t}\delta_t
+-\sum_{n=t+1}^{N}C_nT_n(1-e^{-\sigma_n\delta_n})\delta_t\\
+\end{aligned}
+\]</div>
+<p>最后，若直接使用上式计算，在求解 <span class="arithmatex">\(t\)</span> 点的导数时还需要遍历 <span class="arithmatex">\(t\)</span> 点之后的采样点，计算成本较高。考虑到在实际求解过程中，导数计算是在正向渲染之后进行的，即最终的渲染结果 <span class="arithmatex">\(L(\mathbf{x},\omega)\)</span> 已知，所以一般在实际应用中，会对上式作进一步地转换，得到最终的计算式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial{L(\mathbf{x},\omega)}}{\partial{\sigma_t}}
+&amp;=C_tT_te^{-\sigma_t\delta_t}\delta_t
+-[L(\mathbf{x},\omega)-\sum_{n=1}^{t}C_nT_n(1-e^{-\sigma_n\delta_n})]\delta_t\\
+&amp;=C_tT_{t+1}\delta_t-[L(\mathbf{x},\omega)-\sum_{n=1}^{t}C_nT_n(1-e^{-\sigma_n\delta_n})]\delta_t
+\end{aligned}
+\]</div>
 
 
 

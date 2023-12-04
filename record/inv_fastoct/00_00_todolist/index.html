@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -483,7 +488,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../job/offer_harvester/" class="md-tabs__link">
+        <a href="../../../work/offer_harvester/" class="md-tabs__link">
           
   
     
@@ -1066,7 +1071,7 @@
         
   
   <span class="md-ellipsis">
-    [Protected] 深度学习
+    深度学习
   </span>
   
 
@@ -3071,7 +3076,7 @@
         
   
   <span class="md-ellipsis">
-    地形生成
+    [Protected] 地形生成
   </span>
   
 
@@ -3336,7 +3341,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../job/offer_harvester/" class="md-nav__link ">
+            <a href="../../../work/offer_harvester/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3369,7 +3374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/02_information/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/02_information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3390,7 +3395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/03_share/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/03_share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3411,7 +3416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/01_timeline/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/01_timeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3432,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/04_record/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/04_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3453,7 +3458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/05_knowledge/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/05_knowledge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3727,6 +3732,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      思考与调研
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3742,7 +3764,59 @@
 
   <h1>00 00 todolist</h1>
 
-
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 开发</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持多batch</p>
+<blockquote>
+<p>加入支持多batch渲染后，warning：</p>
+<p><img alt="image-20230817005022911" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202308170050380.png" /></p>
+</blockquote>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 颜色学习的问题</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 实验：判断是哪一步出了问题：</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 可微渲染器的计算（如何验证@岑运池）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 把可微渲染器这一块儿搞明白</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 可微渲染器支持多image loss</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 不同loss的grad有数量级差距</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持多线程渲染</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持深度渲染</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 添加光照直接监督损失</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ！！优先：找到valid过程慢的原因</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 添加test.py 网络</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 模型的剪枝/压缩 <a href="https://zhuanlan.zhihu.com/p/436868929">PyTorch Lightning V1.2.0新特性代码介绍 - 知乎 (zhihu.com)</a></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="https://cloud.tencent.com/developer/article/2222018">pytorch_lightning模型训练加速技巧与涨点技巧-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 支持球面函数</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ‼️ 性能优化</p>
+</li>
+</ul>
+<h5 id="_1">思考与调研<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 梁老师： <strong>调研光照估计的应用，特别是光照一致性/增强现实</strong> <a href="../survey/%E5%85%89%E7%85%A7%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">光照估计的应用场景.md</a> </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 引入八叉树的光照估计与虚实融合算法，可以给VR带来哪些全新的体验/场景</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 八叉树带来的是时间空间利用率的提升，这能带来什么？怎么用实验验证？有没有一个VR里的场景，原来不支持，现在支持了</li>
+</ul>
 
 
 

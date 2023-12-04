@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#octree-to-graph" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -496,7 +496,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../job/offer_harvester/" class="md-tabs__link">
+        <a href="../../../work/offer_harvester/" class="md-tabs__link">
           
   
     
@@ -1079,7 +1079,7 @@
         
   
   <span class="md-ellipsis">
-    [Protected] 深度学习
+    深度学习
   </span>
   
 
@@ -2647,9 +2647,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#octree-to-graph" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Octree to Graph
+      简化方程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散化方程
     </span>
   </a>
   
@@ -3398,7 +3407,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../job/offer_harvester/" class="md-nav__link ">
+            <a href="../../../work/offer_harvester/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3431,7 +3440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/02_information/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/02_information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3452,7 +3461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/03_share/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/03_share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3473,7 +3482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/01_timeline/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/01_timeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3494,7 +3503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/04_record/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/04_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3515,7 +3524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/05_knowledge/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/05_knowledge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3796,9 +3805,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#octree-to-graph" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Octree to Graph
+      简化方程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散化方程
     </span>
   </a>
   
@@ -3821,7 +3839,59 @@
 
   <h1>体渲染方程</h1>
 
-<h3 id="octree-to-graph">Octree to Graph<a class="headerlink" href="#octree-to-graph" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/volume-rendering-for-developers/volume-rendering-summary-equations.html">Volume Rendering for Developers: Foundations (scratchapixel.com)</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/595117334">NeRF入门之体渲染 (Volume Rendering)</a></p>
+</blockquote>
+<h3 id="_1">简化方程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>假设不考虑光在介质中的散射现象，则原辐射传输方程可以简化为：</p>
+<div class="arithmatex">\[
+(\omega\cdot\nabla)L(\mathbf{x},\omega)=
+\underbrace{-\sigma_a(\mathbf{x},\omega)L(\mathbf{x},\omega)}_{absorption}
++\underbrace{\sigma_a(\mathbf{x},\omega)L_e(\mathbf{x},\omega)}_{emission}
+\]</div>
+<p>对应地，渲染方程可以简化为（同时忽略背景颜色，即令 <span class="arithmatex">\(L(0)=0\)</span>）：</p>
+<div class="arithmatex">\[
+L(\mathbf{x},\omega)=L(s)=\int^s_{t=0}T(t)\sigma_a(t)L_e(t)\mathrm{d}t,\quad T(s)=e^{-\int^s_{t=0}\sigma_a(t)\mathrm{d}t}
+\]</div>
+<h3 id="_2">离散化方程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>上述积分式是无法在计算机中直接计算的，需要将其离散化才能求解。下面推导体渲染简化方程的离散求解式。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202305130210462.png" alt="image-20230513021048414" style="zoom:50%; display:block; margin:auto;" /></p>
+<p>这里采用最简单的等距采样法，将整个光路 <span class="arithmatex">\([0,s]\)</span> 划分为 <span class="arithmatex">\(N\)</span> 个相等间距的区间 <span class="arithmatex">\([t_n,t_{n-1}]\)</span>，则有：</p>
+<div class="arithmatex">\[
+L(t_n\to t_{n-1})=\int_{t=t_n}^{t_{n+1}}T(t)\sigma_a(t)L_e(t)\mathrm{d}t
+\]</div>
+<p>假设每个区间内的 <span class="arithmatex">\(\sigma\)</span> 和 <span class="arithmatex">\(L_e\)</span> 均不变，记为 <span class="arithmatex">\(\sigma_n\)</span> 和 <span class="arithmatex">\(C_n\)</span> ，则有：</p>
+<div class="arithmatex">\[
+L(t_n\to t_{n-1})=\sigma_nC_n\int_{t=t_n}^{t_{n+1}}T(t)\mathrm{d}t
+\]</div>
+<p>进一步地，将 <span class="arithmatex">\(T(t)\)</span> 拆分为两段的乘积形式：</p>
+<div class="arithmatex">\[
+T(t)=e^{-\int^{t_n}_{0}\sigma_a(u)\mathrm{d}u}\cdot e^{-\int^t_{t_n}\sigma_a(u)\mathrm{d}u}=T(0\to t_n)\cdot T(t_n\to t)=T(t_n)\cdot T(t_n-t)
+\]</div>
+<p>相应地，区间内的辐射强度的积分式变为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+L(t_n\to t_{n+1})
+&amp;=\sigma_nC_n\int_{t=t_n}^{t_{n+1}}T(t_n)T(t_n\to t)\mathrm{d}t\\
+&amp;=\sigma_nC_nT(t_n)\int_{t=t_n}^{t_{n+1}}e^{-\int^{t}_{t_n}\sigma_n\mathrm{d}u}\mathrm{d}t\\
+&amp;=\sigma_nC_nT(t_n)\int_{t=t_n}^{t_{n+1}}e^{-\sigma_n(t-t_n)}\mathrm{d}t\\
+&amp;=\sigma_nC_nT(t_n)\frac{e^{-\sigma_n(t-t_n)}}{-\sigma_n}\mid^{t_{n+1}}_{t_{n}}\\
+&amp;=C_nT(t_n)(1-e^{-\sigma_n(t_{n+1}-t_n)})
+\end{aligned}
+\]</div>
+<p>上式中的 <span class="arithmatex">\(T(t_n)\)</span> 项仍是积分式，下面将其离散化，假设每个小区间长度为 <span class="arithmatex">\(\delta_n=t_{n+1}-t_{n}\)</span> ，则有：</p>
+<div class="arithmatex">\[
+T_n=T(t_n)=e^{-\int^{t_n}_{0}\sigma_a(u)\mathrm{d}u}\approx e^{-\sum_{k=1}^{n-1}\sigma_k\delta_k}
+\]</div>
+<p>由此得到区间内的辐射强度的离散表示：</p>
+<div class="arithmatex">\[
+L(t_n\to t_{n+1})=C_nT_n(1-e^{-\sigma_n\delta_n}),\quad T_n=e^{-\sum_{k=1}^{n-1}\sigma_k\delta_k}
+\]</div>
+<p>最后，将所有采样区间的值累加得到 <strong>体渲染简化方程的离散表达</strong> ：</p>
+<div class="arithmatex">\[
+L(\mathbf{x},\omega)=L(s)=\sum_{n=1}^{N}C_nT_n(1-e^{-\sigma_n\delta_n}),\quad T_n=e^{-\sum_{k=1}^{n-1}\sigma_k\delta_k}
+\]</div>
 
 
 

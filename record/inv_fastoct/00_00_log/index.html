@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -483,7 +488,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../job/offer_harvester/" class="md-tabs__link">
+        <a href="../../../work/offer_harvester/" class="md-tabs__link">
           
   
     
@@ -1066,7 +1071,7 @@
         
   
   <span class="md-ellipsis">
-    [Protected] 深度学习
+    深度学习
   </span>
   
 
@@ -3071,7 +3076,7 @@
         
   
   <span class="md-ellipsis">
-    地形生成
+    [Protected] 地形生成
   </span>
   
 
@@ -3336,7 +3341,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../job/offer_harvester/" class="md-nav__link ">
+            <a href="../../../work/offer_harvester/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3369,7 +3374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/02_information/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/02_information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3390,7 +3395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/03_share/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/03_share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3411,7 +3416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/01_timeline/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/01_timeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3432,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/04_record/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/04_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3453,7 +3458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/05_knowledge/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/05_knowledge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3727,6 +3732,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torchinverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      torch.inverse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssim" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      半精度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      多batch渲染器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3742,7 +3806,63 @@
 
   <h1>00 00 log</h1>
 
-
+<p>近期进展：</p>
+<ol>
+<li>
+<p>模型训练 pipeline 时间优化：</p>
+</li>
+<li>
+<p><code>18h+</code> -&gt; <code>10h-</code>（多batch / 工程优化）（多线程无效）</p>
+</li>
+<li>
+<p>模型精度提升：</p>
+</li>
+<li>
+<p>PSNR：16.06 -&gt; 16.42</p>
+</li>
+<li>
+<p>RMSE：0.2321 -&gt; 0.1550</p>
+</li>
+<li>
+<p>完成laval indoor真实场景数据集的处理，finetune 网络中</p>
+</li>
+<li>
+<p>完成可微八叉树体素渲染器：</p>
+</li>
+<li>
+<ol>
+<li><strong>后续</strong> finetune 网络：256*3 - 八叉树网络 - 可微八叉树</li>
+</ol>
+</li>
+</ol>
+<h2 id="_1">性能优化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h4 id="torchinverse">torch.inverse<a class="headerlink" href="#torchinverse" title="Permanent link">&para;</a></h4>
+<ul>
+<li>优化前</li>
+</ul>
+<p><img alt="image-20230903131654679" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202309031317155.png" /></p>
+<ul>
+<li>torch.inverse </li>
+</ul>
+<p><img alt="image-20230902204452936" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202309022101285.png" /></p>
+<ul>
+<li>为何单独测试 pose2inverse 快，但放在里面确是 torch.inverse 快</li>
+</ul>
+<h4 id="ssim">ssim<a class="headerlink" href="#ssim" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ssim 计算耗时明显</li>
+</ul>
+<p><img alt="image-20230903133918020" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202309031339522.png" /></p>
+<h4 id="_2">半精度<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>增加了半精度（可以支持batch为4）</li>
+</ul>
+<h4 id="batch">多batch渲染器<a class="headerlink" href="#batch" title="Permanent link">&para;</a></h4>
+<ul>
+<li>优化前：</li>
+</ul>
+<p><img alt="image-20230903211536148" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202309032115673.png" /></p>
+<p><img alt="image-20230903211644374" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202309032116915.png" /></p>
 
 
 

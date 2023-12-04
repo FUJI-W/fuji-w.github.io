@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#point-cloud-to-volume" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -491,7 +496,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../job/offer_harvester/" class="md-tabs__link">
+        <a href="../../../work/offer_harvester/" class="md-tabs__link">
           
   
     
@@ -1074,7 +1079,7 @@
         
   
   <span class="md-ellipsis">
-    [Protected] 深度学习
+    深度学习
   </span>
   
 
@@ -2523,6 +2528,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    点云转体素
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2532,6 +2548,56 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#point-cloud-to-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point Cloud to Volume
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point Cloud to Volume">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入输出数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      转换矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3356,7 +3422,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../job/offer_harvester/" class="md-nav__link ">
+            <a href="../../../work/offer_harvester/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3389,7 +3455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/02_information/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/02_information/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3410,7 +3476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/03_share/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/03_share/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3431,7 +3497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/01_timeline/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/01_timeline/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3452,7 +3518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/04_record/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/04_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3473,7 +3539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../job/offer_harvester/05_knowledge/" class="md-nav__link">
+      <a href="../../../work/offer_harvester/05_knowledge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3747,6 +3813,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#point-cloud-to-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point Cloud to Volume
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point Cloud to Volume">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入输出数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      转换矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3762,7 +3869,39 @@
 
   <h1>点云转体素</h1>
 
-
+<h3 id="point-cloud-to-volume">Point Cloud to Volume<a class="headerlink" href="#point-cloud-to-volume" title="Permanent link">&para;</a></h3>
+<h4 id="_1">输入输出数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>输入数据</li>
+<li>点云 point cloud：<code>(x,y,z)</code> 表示点在相机或世界坐标系下的三维坐标。</li>
+<li>输出数据</li>
+<li>体素网格 volume：<code>(i,j,k)</code> 表示点在体素网格中的索引坐标。</li>
+</ul>
+<h4 id="_2">转换矩阵<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>从点云到体素的转换任务可以用下面的表达式来概括，即 <strong>将连续的三维坐标离散化为固定尺寸的体素网格索引</strong> 。</p>
+<div class="arithmatex">\[
+(x_{min},x_{max})\times(y_{min},y_{max})\times(z_{min},z_{max})\quad \to \quad (0,W)\times(0,H)\times(0,D)
+\]</div>
+<p>有很多方式完成这种映射，下面仅介绍在本文的实践中采用的方法。</p>
+<ol>
+<li>给定点云的包围盒 bbox，先将点云坐标归一化到 <span class="arithmatex">\((-1, 1)^3\)</span> ，下图以二维为例。</li>
+</ol>
+<p><img alt="image-20230610232832378" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306102328961.png" /></p>
+<div class="arithmatex">\[
+\textcolor{blue}{\begin{pmatrix}x' \\ y' \\ z'\end{pmatrix}=\frac{1}{max}\begin{pmatrix}x \\ y \\ z\end{pmatrix}},
+   \quad\mathbf{where}\ \ 
+   max=\mathrm{max}(\mathrm{abs}(\mathbf{bbox}))
+   \]</div>
+<ol>
+<li>给定体素的形状 <span class="arithmatex">\((H,W,D)\)</span> ，将坐标由 <span class="arithmatex">\((-1, 1)^3\)</span> 转换为 <span class="arithmatex">\((0,W)\times(0,H)\times(0,D)\)</span> ，下图依然以二维为例。</li>
+</ol>
+<p><img alt="image-20230611012150949" src="https://cdn.jsdelivr.net/gh/SnowOnVolcano/imagebed/202306110121036.png" /></p>
+<div class="arithmatex">\[
+\begin{pmatrix}x'' \\ y'' \\ z''\end{pmatrix}=\begin{pmatrix}W/2 &amp;0 &amp; 0\\ 0 &amp; H/2 &amp; 0  \\ 0 &amp; 0 &amp; D/2\end{pmatrix}\begin{bmatrix}\begin{pmatrix}x' \\ y' \\ z'\end{pmatrix}+\begin{pmatrix}1 \\ 1 \\ 1\end{pmatrix}\end{bmatrix}
+   \quad\Rightarrow\quad \textcolor{blue}{
+   \begin{pmatrix}x'' \\ y'' \\ z'' \\ 1\end{pmatrix}=\frac{1}{2}\begin{pmatrix}W &amp;0 &amp; 0 &amp; W\\ 0 &amp; H &amp; 0 &amp; H  \\ 0 &amp; 0 &amp; D &amp; D \\ 0 &amp; 0 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x' \\ y' \\ z' \\ 1\end{pmatrix}
+   }
+   \]</div>
 
 
 
